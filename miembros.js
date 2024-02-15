@@ -12,17 +12,17 @@ function angel() {
   document.getElementById("desc").innerText = "Me apasiona el fútbol. Disfruto jugando con amigos y siguiendo a mi equipo favorito.\nEl ambiente en el estadio durante un partido emocionante es algo que realmente disfruto";
 } 
 function andres() {
-  document.getElementById("nombre").innerText = "Andres Polla Gorda";
+  document.getElementById("nombre").innerText = "Andres Espejo Fernandez";
   document.getElementById("mail").innerHTML = "<p id=\"mail\"><a href=\"<link>mailto:raduran@ucm.es</link>\">raduran@ucm.es</a></p>";
   document.getElementById("desc").innerText = "Me apasiona el fútbol. Disfruto jugando con amigos y siguiendo a mi equipo favorito.\nEl ambiente en el estadio durante un partido emocionante es algo que realmente disfruto";
 }
 function dorzhi() {
-  document.getElementById("nombre").innerText = "Dorzhi chino ruso";
+  document.getElementById("nombre").innerText = "Dorzhi Aylagas Tsyzhipov";
   document.getElementById("mail").innerHTML = "<p id=\"mail\"><a href=\"<link>mailto:raduran@ucm.es</link>\">raduran@ucm.es</a></p>";
   document.getElementById("desc").innerText = "Me apasiona el fútbol. Disfruto jugando con amigos y siguiendo a mi equipo favorito.\nEl ambiente en el estadio durante un partido emocionante es algo que realmente disfruto";
 }
 function sergio() {
-  document.getElementById("nombre").innerText = "Sergio farlopa parla";
+  document.getElementById("nombre").innerText = "Sergio Cuenca López";
   document.getElementById("mail").innerHTML = "<p id=\"mail\"><a href=\"<link>mailto:raduran@ucm.es</link>\">raduran@ucm.es</a></p>";
-  document.getElementById("desc").innerText = "Me apasiona el fútbol. Disfruto jugando con amigos y siguiendo a mi equipo favorito.\nEl ambiente en el estadio durante un partido emocionante es algo que realmente disfruto";
+  document.getElementById("desc").innerText = "Soy un entusiasta del cine. Me encanta ver películas de diferentes géneros y directores. \nAnalizar la narrativa y el simbolismo en el cine es algo que me fascina.";
 }

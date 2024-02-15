@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="w3.css">
+    <title>Miembros</title>
+    
     <link rel="stylesheet" href="miembros.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
     <script src="miembros.js"></script>
@@ -12,21 +12,23 @@
 <body>
     
     <div class="sidebar bar-block" style="width:15%">
+        <button class="bar-item button" style="width:10%;text-align: left;"><a href="index.html"><-</a></button>
+        <button class="bar-item button" style="width:10%;text-align: left;"><img src="logoFoto.jpg" alt="atras" ></button>
         <h2>Miembros</h2>
-        <button onclick="raul()" class="w3-bar-item w3-button" style="width:120%">Raúl</button>
-        <button onclick="angel()" class="w3-bar-item w3-button" style="width:120%">Ángel</button>
-        <button onclick="andres()" class="w3-bar-item w3-button" style="width:120%">Andres</button>
-        <button onclick="dorzhi()" class="w3-bar-item w3-button" style="width:120%">Sergio</button>
-        <button onclick="sergio()" class="w3-bar-item w3-button" style="width:120%">Dorzhi</button>
+        <button onclick="raul()" class="bar-item button" style="width:120%">Raúl</button>
+        <button onclick="angel()" class="bar-item button" style="width:120%">Ángel</button>
+        <button onclick="andres()" class="bar-item button" style="width:120%">Andres</button>
+        <button onclick="dorzhi()" class="bar-item button" style="width:120%">Dorzhi</button>
+        <button onclick="sergio()" class="bar-item button" style="width:120%">Sergio</button>
     </div>
 
     <div style="margin-left:15%">
 
-        <div class="w3-container w3-teal">
+        <div class="container teal">
           <h1 style="font-family: Roboto;">Miembros VirtualVenture</h1>
         </div>
         
-        <div class="w3-container">
+        <div class="container">
         <h3 id="nombre" class="titulo"></h3>
         <p id="mail"><a id="maila" href="mailto:raduran@ucm.es"></a></p>
         <p id = "desc"></p>

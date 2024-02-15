@@ -1,12 +1,25 @@
+/*Inspirado en diseños de w3-school y guiado por github copilot*/
+
+html {
+    box-sizing: border-box
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit
+}
+
+body {
+    margin: 0px
+}
 
 .titulo{
     font-size: 300%;
     font-family: Roboto;
 }
 
-.w3-button:hover{
-    background-color: #00eeff !important;
-}
+
 
 .sidebar{
     display: flex !important;
@@ -27,8 +40,64 @@
     width: 100%;
     display: block;
     padding: 8px 16px;
+    padding-bottom: 10px;
+    padding-top: 10px;
     border: none;
     white-space: normal;
     float: none;
     outline: 0;
+}
+
+.bar-item{
+    padding: 8px 16px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+    width: 100%;
+    text-align: left;
+    white-space: normal;
+    margin-bottom: 10px;
+}
+
+.button{
+    border: none;
+    display: inline-block;
+    padding: 4px 10px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #ac7adc;
+    border-radius: 10px;
+    text-decoration: none !important;
+}
+
+.button:hover{
+    background-color: #00eeff!important;
+}
+.container{
+    padding: 0.01em 16px;
+}
+
+.container:after,
+.container:before{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.teal{
+    color: #fff !important;
+    background-color: #640b9f !important
 }
