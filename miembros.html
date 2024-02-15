@@ -4,44 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="miembros.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <script src="miembros.js"></script>
 </head>
 <body>
-
-    <h1>Miembros del grupo</h1>
-
-    <h2><a href="#Raul">Raúl Durán Catalán</a></h2>
-    <h2><a href="#Angel">Ángel Gallego Muñoz</a></h2>
-    <h2><a href="#Andres">Andres Espejo Fernandez</a></h2>
-    <h2><a href="#Sergio">Sergio Cuenca López</a></h2>
-    <h2><a href="#Dorzhi">Dorzhi Aylagas Tsyzhipov</a></h2>
-
-    <h3 id="Raul">Raúl Durán Catalán</h3>
-    <p><a href="<link>mailto:raduran@ucm.es</link>">raduran@ucm.es</a></p>
-    <p>Me apasiona el fútbol. Disfruto jugando con amigos y siguiendo a mi equipo favorito. 
-        El ambiente en el estadio durante un partido emocionante es algo que realmente disfruto</p>
-   
-    <h3 id="Angel">Ángel Gallego Muñoz</h3>
-    <p><a href="<link>mailto:anggal02@ucm.es</link>">anggal02@ucm.es</a></p>
-    <p>Me encanta la historia. Investigar sobre diferentes épocas y civilizaciones es algo que 
-        me apasiona. Visitar museos y sitios arqueológicos para aprender más sobre el pasado es una 
-        actividad que disfruto enormemente.</p>
-   
-    <h3 id="Andres">Andres Espejo Fernandez</h3>
-    <p><a href="<link>mailto:andespeg@ucm.es</link>">andespeg@ucm.es</a></p>
-    <p>Mi gran pasión es la cocina. Disfruto experimentando con recetas nuevas y explorando la 
-        diversidad de sabores en la gastronomía. Compartir mis platos con familiares y amigos es 
-        algo que me llena de satisfacción.</p>
-   
-    <h3 id="Sergio">Sergio Cuenca López</h3>
-    <p><a href="<link>mailto:sercuenc@ucm.es</link>">sercuenc@ucm.es</a></p>
-    <p>Me fascina la fotografía. Capturar momentos únicos y paisajes impresionantes es algo
-         que me apasiona. Siempre estoy buscando nuevos ángulos y perspectivas para plasmar la belleza en una imagen</p>
     
-    <h3 id="Dorzhi">Dorzhi Aylagas Tsyzhipov</h3>
-    <p><a href="<link>mailto:dorzhiay@ucm.es</link>">dorzhiay@ucm.es</a></p>
-    <p>Soy un entusiasta del cine. Me encanta ver películas de diferentes géneros y directores.
-         Analizar la narrativa y el simbolismo en el cine es algo que me fascina.</p>
-    
+    <div class="sidebar bar-block" style="width:15%">
+        <h2>Miembros</h2>
+        <button onclick="raul()" class="w3-bar-item w3-button" style="width:120%">Raúl</button>
+        <button onclick="angel()" class="w3-bar-item w3-button" style="width:120%">Ángel</button>
+        <button onclick="andres()" class="w3-bar-item w3-button" style="width:120%">Andres</button>
+        <button onclick="dorzhi()" class="w3-bar-item w3-button" style="width:120%">Sergio</button>
+        <button onclick="sergio()" class="w3-bar-item w3-button" style="width:120%">Dorzhi</button>
+    </div>
 
+    <div style="margin-left:15%">
+
+        <div class="w3-container w3-teal">
+          <h1 style="font-family: Roboto;">Miembros VirtualVenture</h1>
+        </div>
+        
+        <div class="w3-container">
+        <h3 id="nombre" class="titulo"></h3>
+        <p id="mail"><a id="maila" href="mailto:raduran@ucm.es"></a></p>
+        <p id = "desc"></p>
+        </div>
+    
+    </div>
 </body>
 </html>
