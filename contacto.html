@@ -4,32 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="miembros.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <script src="miembros.js"></script>
 </head>
 <body>
-    <h1>Contacto</h1>
-    <form action="mailto:algo@ucm.es" method="post" enctype="text/plain">
-        
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required><br>
+    <div class="w3-container w3-teal">
+        <h1 style="font-family: Roboto;">Contacto</h1>
+      </div>
 
-        <label for="email">Email de contacto:</label>
-        <input type="email" id="email" name="email" required><br>
+    <div style="margin-left: 3%; margin-top: 3%;">
+        <form action="mailto:algo@ucm.es" method="post" enctype="text/plain">
+            
+            <label for="nombre" style="padding-right: 89.5px;">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br>
 
-        <label>Motivo de la consulta:</label><br>
-        <input type="radio" id="evaluacion" name="motivo" value="Evaluación">
-        <label for="evaluacion">Evaluación</label><br>
-        <input type="radio" id="sugerencias" name="motivo" value="Sugerencias">
-        <label for="sugerencias">Sugerencias</label><br>
-        <input type="radio" id="criticas" name="motivo" value="Críticas">
-        <label for="criticas">Críticas</label><br>
+            <label for="email" style="padding-right: 15px; margin-top: 10px;">Email de contacto:</label>
+            <input type="email" id="email" name="email" required><br>
 
-        <input type="checkbox" id="terminos" name="terminos" required>
-        <label for="terminos">Marque esta casilla para verificar que ha leído nuestros términos y condiciones del servicio</label><br>
+            <label>Motivo de la consulta:</label><br>
+            <div style= "margin-left: 7%;">
+                <input type="radio" id="evaluacion" name="motivo" value="Evaluación">
+                <label for="evaluacion">Evaluación</label><br>
+                <input type="radio" id="sugerencias" name="motivo" value="Sugerencias">
+                <label for="sugerencias">Sugerencias</label><br>
+                <input type="radio" id="criticas" name="motivo" value="Críticas">
+                <label for="criticas">Críticas</label><br>
+            </div>
+            
 
-        <label for="consulta">Consulta:</label><br>
-        <textarea id="consulta" name="consulta" rows="5" cols="50"></textarea><br>
+            <input type="checkbox" id="terminos" name="terminos" required>
+            <label for="terminos">Marque esta casilla para verificar que ha leído nuestros términos y condiciones del servicio</label><br>
 
-        <input type="submit" value="Enviar">
-    </form>
+            <label for="consulta" style="padding-right: px;">Consulta:</label><br>
+            <div style="margin-left: 7%;">
+                <textarea id="consulta" name="consulta" rows="5" cols="50"></textarea><br>
+            </div>
+            
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
 </body>
 </html>
