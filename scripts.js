@@ -4,13 +4,16 @@ function toggleNav() {
     const sidebarNav = document.getElementById('sidebarNav');
 
     if (sidebarNav.style.display === "none") {
-        sidebar.style.width = "0px";
-        main.style.marginLeft = "250px";
+        sidebar.style.width = "7%";
+        sidebar.style.padding = "7%";
+        main.style.marginLeft = "0";
         sidebarNav.style.display = "block";
         document.body.style.overflow = "hidden";
     } else {
         sidebarNav.style.display = "none";
         sidebar.style.width = "0";
+        sidebar.style.padding = "0";
+        sidebarNav.style.width = "0";
         main.style.marginLeft = "0";
         document.body.style.overflow = "auto";
     }
@@ -18,11 +21,11 @@ function toggleNav() {
 
 const sidebarNav = document.getElementById('sidebarNav');
 const links = [
-    { href: 'person1.html', text: 'Person 1' },
-    { href: 'person2.html', text: 'Person 2' },
-    { href: 'person3.html', text: 'Person 3' },
-    { href: 'person4.html', text: 'Person 4' },
-    { href: 'person5.html', text: 'Person 5' }
+    { href: 'person1.html', text: 'Angel' },
+    { href: 'person2.html', text: 'Raul' },
+    { href: 'person3.html', text: 'Dorzhi' },
+    { href: 'person4.html', text: 'Sergio' },
+    { href: 'person5.html', text: 'Andres' }
 ];
 
 links.forEach(link => {
