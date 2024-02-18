@@ -3,19 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>People</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="miembros.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
 </head>
 <body>
-    <div id="mySidebar" class="sidebar">
-       <ul class="nav" id="sidebarNav">
-        </ul>
+    
+    <div class="sidebar bar-block" style="width:15%">
+        <h2>Miembros</h2>
+        <button onclick="raul()" class="w3-bar-item w3-button" style="width:120%">Introducción</button>
+        <div class="w3-dropdown-hover">
+            <button class="w3-button" style="width:120%">Tipos de Usuario<i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-bar-block">
+              <a href="#" class="w3-bar-item w3-button">Link</a>
+              <a href="#" class="w3-bar-item w3-button">Link</a>
+            </div>
+        </div>
     </div>
-    <div id="main">
-        <button class="openbtn" onclick="toggleNav()"> ☰☰☰ </button>  
-        <h2>Modern Web Page</h2>
-        <p>Select a person from the sidebar.</p>
+
+    <div style="margin-left:15%">
+
+        <div class="w3-container w3-teal">
+          <h1 style="font-family: Roboto;">Miembros VirtualVenture</h1>
+        </div>
+        
+        <div class="w3-container">
+        <h3 id="nombre" class="titulo"></h3>
+        <p id="mail"><a id="maila" href="mailto:raduran@ucm.es"></a></p>
+        <p id = "desc"></p>
+        </div>
+    
     </div>
-    <script src="scripts.js"></script>
 </body>
 </html>

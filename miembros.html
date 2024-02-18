@@ -1,9 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Roberto</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="miembros.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <script src="miembros.js"></script>
 </head>
 <body>
-  <h1>Roberto</h1>
+    
+    <div class="sidebar bar-block" style="width:15%">
+        <h2>Miembros</h2>
+        <button onclick="raul()" class="w3-bar-item w3-button" style="width:120%">Raúl</button>
+        <button onclick="angel()" class="w3-bar-item w3-button" style="width:120%">Ángel</button>
+        <button onclick="andres()" class="w3-bar-item w3-button" style="width:120%">Andres</button>
+        <button onclick="dorzhi()" class="w3-bar-item w3-button" style="width:120%">Sergio</button>
+        <button onclick="sergio()" class="w3-bar-item w3-button" style="width:120%">Dorzhi</button>
+    </div>
+
+    <div style="margin-left:15%">
+
+        <div class="w3-container w3-teal">
+          <h1 style="font-family: Roboto;">Miembros VirtualVenture</h1>
+        </div>
+        
+        <div class="w3-container">
+        <h3 id="nombre" class="titulo"></h3>
+        <p id="mail"><a id="maila" href="mailto:raduran@ucm.es"></a></p>
+        <p id = "desc"></p>
+        </div>
+    
+    </div>
 </body>
 </html>

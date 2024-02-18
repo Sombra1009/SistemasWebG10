@@ -1,0 +1,34 @@
+
+.titulo{
+    font-size: 300%;
+    font-family: Roboto;
+}
+
+.w3-button:hover{
+    background-color: #00eeff !important;
+}
+
+.sidebar{
+    display: flex !important;
+    height: 100%;
+    width: 200px;
+    background-color: #9e61d7;
+    position: fixed !important;
+    z-index: 1;
+    overflow: auto;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.bar-block{
+    width: 100%;
+    text-align: center;
+    padding: 8px 16px;
+    width: 100%;
+    display: block;
+    padding: 8px 16px;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0;
+}
