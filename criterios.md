@@ -1,8 +1,8 @@
 # Feedback de la P1 Nota: 
 ## Evaluación de las páginas (hasta 4 puntos) 
 
-### index.html (hasta 0.5 puntos) Contenido
-solicitado:
+### index.html (hasta 0.5 puntos) 
+Contenido solicitado:
     - [ ] Incluye título 
     - [ ] Incluye logotipo 
     - [ ] Incluye descripción / breve resumen 
@@ -51,11 +51,12 @@ Errores habituales:
     - [ ] La mayoría de las páginas pasan el validador W3C (+0.25 puntos). 
     - [ ] Todas las páginas pasan el validador W3C (+0.5 puntos). 
 
-Comentarios: Errores habituales: 
+Comentarios: 
+Errores habituales: 
     - No se puede utilizar
     - Se han utilizado para modificar el aspecto pero no tiene sentido representar la información mediante una tabla. 
 
-##Evaluación de la descripción del proyecto (hasta 6 puntos) 
+## Evaluación de la descripción del proyecto (hasta 6 puntos) 
 ### Evaluación de los bocetos (hasta 4 puntos) 
     - [ ] No se proporcionan los bocetos mínimos para entender las funcionalidades de la aplicación (0 puntos) 
     - [ ] Faltan bastantes bocetos para las funcionalidades de la aplicación (1 puntos). 
