@@ -2,23 +2,23 @@
 ## Evaluación de las páginas (hasta 4 puntos) 
 
 ### index.html (hasta 0.5 puntos) 
-Contenido solicitado:
-    - [ ] Incluye título 
-    - [ ] Incluye logotipo 
-    - [ ] Incluye descripción / breve resumen 
+    Contenido solicitado:
+        - [ ] Incluye título 
+        - [ ] Incluye logotipo 
+        - [ ] Incluye descripción / breve resumen 
 
-Evaluación de este apartado: 
+    Evaluación de este apartado: 
     - [ ] No se incluye el contenido solicitado en el enunciado (0 puntos) 
     - [ ] No se incluye todo el contenido solicitado en el enunciado (0.25 puntos) 
     - [ ] Se incluye el contenido solicitado en el enunciado (0.5 puntos) 
     - [ ] Valida W3C 
     
 ### miembros.html (hasta 0.5 puntos) 
-Contenido solicitado: 
+    Contenido solicitado: 
     - [ ] Incluye el listado con todos los integrantes del grupo al comienzo de la página. 
     - [ ] Las descripciones contienen la información solicitada 
     
-Evaluación de este apartado: 
+    Evaluación de este apartado: 
     - [ ] No se incluye el contenido solicitado en el enunciado (0 puntos) 
     - [ ] No se incluye todo el contenido solicitado en el enunciado (0.25 puntos) 
     - [ ] Se incluye el contenido solicitado en el enunciado (0.5 puntos) 
