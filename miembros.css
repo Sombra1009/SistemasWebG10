@@ -120,5 +120,6 @@ body {
 
 .teal{
     color: #fff !important;
-    background-color: #640b9f !important
+    background-color: #640b9f !important;
+    display: flex !important;
 }
