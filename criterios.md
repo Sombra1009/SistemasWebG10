@@ -1,28 +1,28 @@
 # Feedback de la P1 Nota: 
 ## Evaluación de las páginas (hasta 4 puntos) 
 
-### index.html (hasta 0.5 puntos) Contenido
-solicitado:
-    - [ ] Incluye título 
-    - [ ] Incluye logotipo 
-    - [ ] Incluye descripción / breve resumen 
+### index.html (hasta 0.5 puntos) 
+    Contenido solicitado:
+        - [ ] Incluye título 
+        - [ ] Incluye logotipo 
+        - [ ] Incluye descripción / breve resumen 
 
-Evaluación de este apartado: 
-    - [ ] No se incluye el contenido solicitado en el enunciado (0 puntos) 
-    - [ ] No se incluye todo el contenido solicitado en el enunciado (0.25 puntos) 
-    - [ ] Se incluye el contenido solicitado en el enunciado (0.5 puntos) 
-    - [ ] Valida W3C 
+    Evaluación de este apartado: 
+        - [ ] No se incluye el contenido solicitado en el enunciado (0 puntos) 
+        - [ ] No se incluye todo el contenido solicitado en el enunciado (0.25 puntos) 
+        - [ ] Se incluye el contenido solicitado en el enunciado (0.5 puntos) 
+        - [ ] Valida W3C 
     
 ### miembros.html (hasta 0.5 puntos) 
-Contenido solicitado: 
-    - [ ] Incluye el listado con todos los integrantes del grupo al comienzo de la página. 
-    - [ ] Las descripciones contienen la información solicitada 
+    Contenido solicitado: 
+        - [ ] Incluye el listado con todos los integrantes del grupo al comienzo de la página. 
+        - [ ] Las descripciones contienen la información solicitada 
     
-Evaluación de este apartado: 
-    - [ ] No se incluye el contenido solicitado en el enunciado (0 puntos) 
-    - [ ] No se incluye todo el contenido solicitado en el enunciado (0.25 puntos) 
-    - [ ] Se incluye el contenido solicitado en el enunciado (0.5 puntos) 
-    - [ ] Valida W3C 
+    Evaluación de este apartado: 
+        - [ ] No se incluye el contenido solicitado en el enunciado (0 puntos) 
+        - [ ] No se incluye todo el contenido solicitado en el enunciado (0.25 puntos) 
+        - [ ] Se incluye el contenido solicitado en el enunciado (0.5 puntos) 
+        - [ ] Valida W3C 
     
 ### planificacion.html (hasta 0.5 puntos) 
     - [ ] No se incluye el contenido solicitado en el enunciado (0 puntos) 
@@ -36,11 +36,11 @@ Evaluación de este apartado:
     - [ ] Se puede interactuar con el formulario (+0.25 puntos) 
     - [ ] Valida W3C 
     
-Comentarios:
-Errores habituales: 
-    - El formulario no es interactivo. 
-    - Utilizando enctype="text/plain" en el contenido del mensaje es legible. 
-    - Las etiquetas no están relacionadas con sus componentes con el atributo for. 
+    Comentarios:
+    Errores habituales: 
+        - El formulario no es interactivo. 
+        - Utilizando enctype="text/plain" en el contenido del mensaje es legible. 
+        - Las etiquetas no están relacionadas con sus componentes con el atributo for. 
 
 ### Uso adecuado del HTML (hasta 2 puntos) 
     - [ ] Hay errores graves en el HTML (0 puntos) 
@@ -51,11 +51,12 @@ Errores habituales:
     - [ ] La mayoría de las páginas pasan el validador W3C (+0.25 puntos). 
     - [ ] Todas las páginas pasan el validador W3C (+0.5 puntos). 
 
-Comentarios: Errores habituales: 
-    - No se puede utilizar
-    - Se han utilizado para modificar el aspecto pero no tiene sentido representar la información mediante una tabla. 
+    Comentarios: 
+    Errores habituales: 
+        - No se puede utilizar
+        - Se han utilizado para modificar el aspecto pero no tiene sentido representar la información mediante una tabla. 
 
-##Evaluación de la descripción del proyecto (hasta 6 puntos) 
+## Evaluación de la descripción del proyecto (hasta 6 puntos) 
 ### Evaluación de los bocetos (hasta 4 puntos) 
     - [ ] No se proporcionan los bocetos mínimos para entender las funcionalidades de la aplicación (0 puntos) 
     - [ ] Faltan bastantes bocetos para las funcionalidades de la aplicación (1 puntos). 
