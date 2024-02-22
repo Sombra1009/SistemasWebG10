@@ -1,68 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bocetos-Todo</title> 
+    <title>Bocetos</title>
     <link rel="stylesheet" href="miembros.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
-    <script src="miembros.js"></script>
 </head>
+
 <body>
-    
-    <div class="sidebar bar-block" style="width:15%">
-        <h2 class="bar-item" style="font-size: 30px;">Bocetos</h2>
-        <a href="bocetos.html" class="bar-item button" style="text-decoration:none">Todo</a>
-        <a href="comven.html" class="bar-item button" style="text-decoration:none">Compra-Venta</a>
-        <a href="monedero.html" class="bar-item button" style="text-decoration:none">Monedero</a>
-        <a href="foro.html" class="bar-item button" style="text-decoration:none">Foro</a>
-        <a href="niveles.html" class="bar-item button" style="text-decoration:none">Niveles</a>
-        <a href="noticias.html " class="bar-item button" style="text-decoration:none">Noticias</a>
-    </div>
 
-    <div style="margin-left:15%">
+    <nav class="sidebar bar-block" style="width:15%">
+        <header style="display: flex;">
+            <button class="bar-item button"
+                style="font-size: 30px; width: min-content; height: min-content; margin-top: 5px; background-color: #9e61d7;"><img
+                    src="./img/flecha.png" style="width:20px; height: 20px;"></button></button>
+            <h2 class="bar-item" style="font-size: 30px; margin-top: 0px;"><strong>Funciones</strong></h2>
+        </header>
 
-        <div class="container teal">
-          <h1 style="font-family: Roboto;">Todo</h1>
-        </div>
-        
-        <div class="container">
-            <h1><strong>Compra-Venta</strong></h1>
-                <p>El usuario desde aqui puede ver el evento que hay en esta temporada,asi como los juegos que estan en tendencia</p>
-                <img src="img/principal1.png" width="80%" alt="Imagen de la pagina principal de la web" >
+        <a href="#comven" class="bar-item button" style="text-decoration:none">Compra-Venta</a>
+        <a href="#monedero" class="bar-item button" style="text-decoration:none">Monedero</a>
+        <a href="#foro" class="bar-item button" style="text-decoration:none">Foro</a>
+        <a href="#niveles" class="bar-item button" style="text-decoration:none">Niveles</a>
+        <a href="#noticias" class="bar-item button" style="text-decoration:none">Noticias</a>
+    </nav>
+
+    <section style="display: flex;">
+        <header class="container teal" style="margin-left:15%">
+            <h1 style="font-family: Roboto;">Bocetos</h1>
+        </header>
+
+        <section class="container" style="margin-left:15%; margin-top: 60px;">
+            
+            <article id="comven">
+                <h1><strong>Compra-Venta</strong></h1>
+                <p>El usuario desde aqui puede ver el evento que hay en esta temporada,asi como los juegos que estan en
+                    tendencia</p>
+                <img src="img/principal1.png" style="width:80%" alt="Imagen de la pagina principal de la web">
                 <p>Una vez elegidos los juegos, estos apareceran en la pestaña del carrito</p>
-                <img src="img/principal2.png" width="80%" alt="Imagen de la pagina principal de la web con la pestaña de carrito abierto" >
-                <p>Cuando procedemos al pago nos aparece un resumen con las cosas que vamos a comprar,asi como una casilla para gastar los <a href="monedero.html">puntos</a> de la web.</p>
-                <img src="img/compra1.png" width="80%" alt="Imagen de la pestaña de compra" >
-            <h1><strong>Monedero</strong></h1>
-                <img src="img/compra1.png" width="80%" alt="Imagen de la pagina de compra sin activar el monedero" >
-                <img src="img/compra2.png" width="80%" alt="Imagen de la pagina de compra activando el monedero" >
-                <p>Como se muestra en la imagen , a la hora de la compra podemos seleccionar si queremos 
-                    gastar las monedas que tenemos acumulada , las cuales se consiguen participando en el 
-                    foro o comprando productos, los cuales podemos utilizar para que se nos disminuir el 
+                <img src="img/principal2.png" style="width:80%"
+                    alt="Imagen de la pagina principal de la web con la pestaña de carrito abierto">
+                <p>Cuando procedemos al pago nos aparece un resumen con las cosas que vamos a comprar,asi como una
+                    casilla
+                    para
+                    gastar los <a href="monedero.html">puntos</a> de la web.</p>
+                <img src="img/compra1.png" style="width:80%" alt="Imagen de la pestaña de compra">
+            </article>
+
+            <article id="monedero">
+                <h1><strong>Monedero</strong></h1>
+                <img src="img/compra1.png" style="width:80%" alt="Imagen de la pagina de compra sin activar el monedero">
+                <img src="img/compra2.png" style="width:80%" alt="Imagen de la pagina de compra activando el monedero">
+                <p>Como se muestra en la imagen , a la hora de la compra podemos seleccionar si queremos
+                    gastar las monedas que tenemos acumulada , las cuales se consiguen participando en el
+                    foro o comprando productos, los cuales podemos utilizar para que se nos disminuir el
                     precio de la compra </p>
                 <p>Cada punto equivale a un céntimo</p>
-            <h1><strong>Foro</strong></h1>
-                <img src="img/foroPrincipal.png" width="80%" alt="Imagen de la pagina principal del foro de la web" >
-                <img src="img/juego.png" width="80%" alt="Imagen de la pagina de compra de un juego" >
-                <p>Hay dos formas de acceder al foro de un juego, por la propia pagina de compra o desde la seccion de foro</p>
-                <img src="img/juego2.png" width="80%" alt="Imagen de la pagina de compra de un juego en tu biblioteca" >
-                <p>La unica forma de poder valorar un juego es siendo propietario de una copio</p>
-                <img src="img/foro1.png" width="80%" alt="Imagen del foro de un juego en concreto" >
-            <h1><strong>Niveles</strong></h1>
-                <img src="img/niveles.png" width="80%" alt="Imagen que muestra los diferentes niveles disponibles en la web" >
-                <p>Cada cuenta de usuarios tendran un nivel que subira a medida que compre o participe de 
-                    buena forma dentro de la pagina , con ello prodran acceder a ofertas exclusivas dentro 
-                    de la pagina    </p>
-                <img src="img/niveles2.png" width="80%" alt="Imagen que muestra los diferentes niveles disponibles en la web" >
-                <p>Una de los beneficios es ofrecer ofertas exclusivas para un minimo de nivel</p>
-            <h1><strong>Noticias</strong></h1>
-                <img src="img/noticias.png" width="80%" alt="Imagen de la pagina principal de noticias y ofertas de la web" >
-                <p>En esta parte el usuario estará informado de las ultimas tendencias en videojuegos, tambien de las ofertas con tematica que tiene la web</p>
-                <img src="img/ofertas.png" width="80%" alt="Imagen de la pagina de ofertas " >
-                <p>Aquí se pueden ver los diferentes juegos que incluye la oferta</p>
+            </article>
 
-        </div>
-    </div>
+            <article id="foro">
+                <h1><strong>Foro</strong></h1>
+                <img src="img/foroPrincipal.png" style="width:80%" alt="Imagen de la pagina principal del foro de la web">
+                <img src="img/juego.png" style="width:80%" alt="Imagen de la pagina de compra de un juego">
+                <p>Hay dos formas de acceder al foro de un juego, por la propia pagina de compra o desde la seccion de
+                    foro
+                </p>
+                <img src="img/juego2.png" style="width:80%" alt="Imagen de la pagina de compra de un juego en tu biblioteca">
+                <p>La unica forma de poder valorar un juego es siendo propietario de una copio</p>
+                <img src="img/foro1.png" style="width:80%" alt="Imagen del foro de un juego en concreto">
+            </article>
+
+            <article id="niveles">
+                <h1><strong>Niveles</strong></h1>
+                <img src="img/niveles.png" style="width:80%"
+                    alt="Imagen que muestra los diferentes niveles disponibles en la web">
+                <p>Cada cuenta de usuarios tendran un nivel que subira a medida que compre o participe de
+                    buena forma dentro de la pagina , con ello prodran acceder a ofertas exclusivas dentro
+                    de la pagina </p>
+                <img src="img/niveles2.png" style="width:80%"
+                    alt="Imagen que muestra los diferentes niveles disponibles en la web">
+                <p>Una de los beneficios es ofrecer ofertas exclusivas para un minimo de nivel</p>
+            </article>
+
+            <article id="noticias">
+                <h1><strong>Noticias</strong></h1>
+                <img src="img/noticias.png" style="width:80%"
+                    alt="Imagen de la pagina principal de noticias y ofertas de la web">
+                <p>En esta parte el usuario estará informado de las ultimas tendencias en videojuegos, tambien de las
+                    ofertas
+                    con tematica que tiene la web</p>
+                <img src="img/ofertas.png" style="width:80%" alt="Imagen de la pagina de ofertas ">
+                <p>Aquí se pueden ver los diferentes juegos que incluye la oferta</p>
+            </article>
+
+        </section>
+    </section>
+    
 </body>
+
 </html>
