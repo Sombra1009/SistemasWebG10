@@ -1,64 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miembros</title> 
+    <title>Miembros</title>
     <link rel="stylesheet" href="miembros.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
     <script src="miembros.js"></script>
 </head>
+
 <body>
-    
-    <div class="sidebar bar-block" style="width:15%">
-        <h2 class="bar-item" style="font-size: 30px;">Miembros</h2>
+
+    <nav class="sidebar bar-block" style="width:15%">
+        <header style="display: flex;">
+            <a href="index.html" class="bar-item button"
+                style="font-size: 30px; width: min-content; height: min-content; margin-top: 5px; background-color: #9e61d7;"><img
+                    src="./img/flecha.png" style="width:20px; height: 20px;"
+                    alt="Boton para volver a la página principal"></a>
+            <h2 class="bar-item" style="font-size: 30px; margin-top: 0px;"><strong>Miembros</strong></h2>
+        </header>
         <a href="#Raul" class="bar-item button" style="text-decoration:none">Raúl</a>
         <a href="#Angel" class="bar-item button" style="text-decoration:none">Ángel</a>
         <a href="#Andres" class="bar-item button" style="text-decoration:none">Andres</a>
         <a href="#Sergio" class="bar-item button" style="text-decoration:none">Sergio</a>
         <a href="#Dorzhi" class="bar-item button" style="text-decoration:none">Dorzhi</a>
-    </div>
+    </nav>
 
-    <div style="margin-left:15%">
+    <section class="container" style="margin-left:17%;">
 
-        <div class="container teal">
-          <h1 style="font-family: Roboto;">Miembros VirtualVenture</h1>
-        </div>
-        
-        <div class="container">
-            <h2>Conócenos</h2>
-            <p>En VirtualVenture somos un grupo de estudiantes de la Universidad Complutense de Madrid. 
-                Nos apasiona la tecnología y estamos comprometidos con el desarrollo de soluciones innovadoras. 
-                Nuestro equipo está formado por cinco miembros, cada uno con sus propias habilidades y pasiones.</p>
+        <header class="container teal" style="margin-left:15%">
+            <h1 style="font-family: Roboto;">Miembros de VirtualVenture</h1>
+        </header>
 
-    <h3 id="Raul">Raúl Durán Catalán</h3>
-    <a href="mailto:raduran@ucm.es">raduran@ucm.es</a>
-    <p>Me apasiona el fútbol. Disfruto jugando con amigos y siguiendo a mi equipo favorito. 
-        El ambiente en el estadio durante un partido emocionante es algo que realmente disfruto</p>
-   
-    <h3 id="Angel">Ángel Gallego Muñoz</h3>
-    <a href="mailto:anggal02@ucm.es">anggal02@ucm.es</a>
-    <p>Me encanta la historia. Investigar sobre diferentes épocas y civilizaciones es algo que 
-        me apasiona. Visitar museos y sitios arqueológicos para aprender más sobre el pasado es una 
-        actividad que disfruto enormemente.</p>
-   
-    <h3 id="Andres">Andres Espejo Fernandez</h3>
-    <a href="mailto:andespej@ucm.es">andespej@ucm.es</a>
-    <p>Mi gran pasión es la cocina. Disfruto experimentando con recetas nuevas y explorando la 
-        diversidad de sabores en la gastronomía. Compartir mis platos con familiares y amigos es 
-        algo que me llena de satisfacción.</p>
-   
-    <h3 id="Sergio">Sergio Cuenca López</h3>
-    <a href="mailto:sercuenc@ucm.es">sercuenc@ucm.es</a>
-    <p>Me fascina la fotografía. Capturar momentos únicos y paisajes impresionantes es algo
-         que me apasiona. Siempre estoy buscando nuevos ángulos y perspectivas para plasmar la belleza en una imagen</p>
-    
-    <h3 id="Dorzhi">Dorzhi Aylagas Tsyzhipov</h3>
-    <a href="mailto:dorzhiay@ucm.es">dorzhiay@ucm.es</a>
-    <p>Soy un entusiasta del cine. Me encanta ver películas de diferentes géneros y directores.
-         Analizar la narrativa y el simbolismo en el cine es algo que me fascina.</p>
-        </div>
-    
-    </div>
+        <article id="Raul">
+            <img src="img/raul.jpeg" style="width:15%; padding-top: 60px"
+                alt="fotografía de Raúl en la que sale muy favorecido">
+            <h3><strong>Raúl Durán Catalán</strong></h3>
+            <a href="mailto:raduran@ucm.es">raduran@ucm.es</a>
+            <p>Me apasiona el fútbol. Disfruto jugando con amigos y siguiendo a mi equipo favorito.
+                El ambiente en el estadio durante un partido emocionante es algo que realmente disfruto</p>
+        </article>
+
+        <article id="Angel">
+            <img src="img/angel.jpeg" style="width:20%; padding-top: 60px"
+                alt="fotografía de Ángel en la que sale muy favorecido">
+            <h3><strong>Ángel Gallego Muñoz</strong></h3>
+            <a href="mailto:anggal02@ucm.es">anggal02@ucm.es</a>
+            <p>Me encanta la historia. Investigar sobre diferentes épocas y civilizaciones es algo que
+                me apasiona. Visitar museos y sitios arqueológicos para aprender más sobre el pasado es una
+                actividad que disfruto enormemente.</p>
+        </article>
+
+        <article id="Andres">
+            <img src="img/andres.jpeg" style="width:20%; padding-top: 60px"
+                alt="fotografía de Andres en la que sale muy favorecido">
+            <h3><strong>Andres Espejo Fernandez</strong></h3>
+            <a href="mailto:andespej@ucm.es">andespej@ucm.es</a>
+            <p>Mi gran pasión es la cocina. Disfruto experimentando con recetas nuevas y explorando la
+                diversidad de sabores en la gastronomía. Compartir mis platos con familiares y amigos es
+                algo que me llena de satisfacción.</p>
+        </article>
+
+        <article id="Sergio">
+            <img src="img/sergio.jpeg" style="width:20%; padding-top: 60px"
+                alt="fotografía de Sergio en la que sale muy favorecido">
+            <h3><strong>Sergio Cuenca López</strong></h3>
+            <a href="mailto:sercuenc@ucm.es">sercuenc@ucm.es</a>
+            <p>Me fascina la fotografía. Capturar momentos únicos y paisajes impresionantes es algo
+                que me apasiona. Siempre estoy buscando nuevos ángulos y perspectivas para plasmar la belleza en una
+                imagen</p>
+        </article>
+
+        <article id="Dorzhi">
+            <img src="img/dorzhi.jpeg" style="width:20%; padding-top: 60px"
+                alt="fotografía de Dorzhi en la que sale muy favorecido">
+            <h3><strong>Dorzhi Aylagas Tsyzhipov</strong></h3>
+            <a href="mailto:dorzhiay@ucm.es">dorzhiay@ucm.es</a>
+            <p style="padding-bottom: 400px;">Soy un entusiasta del cine. Me encanta ver películas de diferentes géneros
+                y directores.
+                Analizar la narrativa y el simbolismo en el cine es algo que me fascina.</p>
+        </article>
+    </section>
 </body>
+
 </html>

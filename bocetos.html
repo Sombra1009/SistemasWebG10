@@ -7,15 +7,19 @@
     <title>Bocetos</title>
     <link rel="stylesheet" href="miembros.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <style>
+        h2{font-size: 30px}
+        article{padding-top: 60px}
+    </style>
 </head>
 
 <body>
 
     <nav class="sidebar bar-block" style="width:15%">
         <header style="display: flex;">
-            <button class="bar-item button"
+            <a href="index.html" class="bar-item button"
                 style="font-size: 30px; width: min-content; height: min-content; margin-top: 5px; background-color: #9e61d7;"><img
-                    src="./img/flecha.png" style="width:20px; height: 20px;"></button></button>
+                    src="./img/flecha.png" style="width:20px; height: 20px;" alt="Boton para volver a la página principal"></a>
             <h2 class="bar-item" style="font-size: 30px; margin-top: 0px;"><strong>Funciones</strong></h2>
         </header>
 
@@ -26,15 +30,14 @@
         <a href="#noticias" class="bar-item button" style="text-decoration:none">Noticias</a>
     </nav>
 
-    <section style="display: flex;">
-        <header class="container teal" style="margin-left:15%">
-            <h1 style="font-family: Roboto;">Bocetos</h1>
-        </header>
-
-        <section class="container" style="margin-left:15%; margin-top: 60px;">
+        <section class="container" style="margin-left:15%;">
             
+            <header class="container teal" style="margin-left:15%">
+                <h1 style="font-family: Roboto;">Bocetos</h1>
+            </header>
+
             <article id="comven">
-                <h1><strong>Compra-Venta</strong></h1>
+                <h2><strong>Compra-Venta</strong></h2>
                 <p>El usuario desde aqui puede ver el evento que hay en esta temporada,asi como los juegos que estan en
                     tendencia</p>
                 <img src="img/principal1.png" style="width:80%" alt="Imagen de la pagina principal de la web">
@@ -49,7 +52,7 @@
             </article>
 
             <article id="monedero">
-                <h1><strong>Monedero</strong></h1>
+                <h2><strong>Monedero</strong></h2>
                 <img src="img/compra1.png" style="width:80%" alt="Imagen de la pagina de compra sin activar el monedero">
                 <img src="img/compra2.png" style="width:80%" alt="Imagen de la pagina de compra activando el monedero">
                 <p>Como se muestra en la imagen , a la hora de la compra podemos seleccionar si queremos
@@ -60,7 +63,7 @@
             </article>
 
             <article id="foro">
-                <h1><strong>Foro</strong></h1>
+                <h2><strong>Foro</strong></h2>
                 <img src="img/foroPrincipal.png" style="width:80%" alt="Imagen de la pagina principal del foro de la web">
                 <img src="img/juego.png" style="width:80%" alt="Imagen de la pagina de compra de un juego">
                 <p>Hay dos formas de acceder al foro de un juego, por la propia pagina de compra o desde la seccion de
@@ -72,7 +75,7 @@
             </article>
 
             <article id="niveles">
-                <h1><strong>Niveles</strong></h1>
+                <h2><strong>Niveles</strong></h2>
                 <img src="img/niveles.png" style="width:80%"
                     alt="Imagen que muestra los diferentes niveles disponibles en la web">
                 <p>Cada cuenta de usuarios tendran un nivel que subira a medida que compre o participe de
@@ -84,7 +87,7 @@
             </article>
 
             <article id="noticias">
-                <h1><strong>Noticias</strong></h1>
+                <h2><strong>Noticias</strong></h2>
                 <img src="img/noticias.png" style="width:80%"
                     alt="Imagen de la pagina principal de noticias y ofertas de la web">
                 <p>En esta parte el usuario estará informado de las ultimas tendencias en videojuegos, tambien de las
@@ -95,7 +98,6 @@
             </article>
 
         </section>
-    </section>
     
 </body>
 
