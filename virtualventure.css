@@ -43,6 +43,11 @@ p{
     font-size: 20px;
     line-height: 1.5;
 }
+
+article{
+    padding-top: 60px
+}
+
 html,
 body {
     font-family: Verdana, sans-serif;
