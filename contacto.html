@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="virtualventure.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+</head>
+
+<body>
+    <header class="container teal">
+        <a href="index.html" class="bar-item button"
+        style="font-size: 30px; width: min-content; height: 50px; margin-top: 5px; background-color: #640b9f;"><img
+            src="./img/flecha.png" style="width:20px; height: 20px; padding-top: 0;" alt="Boton para volver a la página principal"></a>
+        <h1 style="font-family: Roboto; margin-left:20px">Contacto</h1>
+    </header>
+
+    <section style="margin-left: 3%; margin-top: 80px;">
+        <h2>Formulario de Contacto.</h2>
+        <form action="mailto:algo@ucm.es" method="post" enctype="text/plain">
+
+            <fieldset style="width: 40%;">
+                <legend>Información personal</legend>
+
+                <div>
+                    <label for="evaluacion">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div>
+                    <label for="evaluacion">E-mail:</label>
+                    <input type="email" id="email" name="email" required style="margin-left: 11px;">
+                </div>
+            </fieldset>
+
+            <fieldset style="width: 40%;">
+                <legend> Consulta</legend>
+                <dl>
+                    <dt>Motivo:</dt>
+                    <dd>
+                        <div>
+                            <input type="radio" id="evaluacion" name="motivo" value="Evaluación">
+                            <label for="evaluacion">Evaluación</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="sugerencias" name="motivo" value="Sugerencias">
+                            <label for="sugerencias">Sugerencias</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="criticas" name="motivo" value="Críticas">
+                            <label for="criticas">Críticas</label>
+                        </div>
+
+                    </dd>
+                    <dt>Detalles:<br></dt>
+                    <dd>
+                        <textarea id="consulta" name="consulta" rows="5" cols="50"></textarea>
+                    </dd>
+                </dl>
+            </fieldset>
+
+            <div>
+                <input type="checkbox" id="terminos" name="terminos" required>
+                <label for="terminos">Marque esta casilla para verificar que ha
+                     leído nuestros términos y condiciones del servicio</label>
+            </div>
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+</body>
+
+</html>
