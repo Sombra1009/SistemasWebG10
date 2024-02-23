@@ -35,6 +35,14 @@ h1{
     font-size: 36px
 }
 
+h2{
+    font-size: 35px;
+}
+
+p{
+    font-size: 20px;
+    line-height: 1.5;
+}
 html,
 body {
     font-family: Verdana, sans-serif;
@@ -131,4 +139,21 @@ body {
     left: 0;
     width: 100%;
     height: 60px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
 }
