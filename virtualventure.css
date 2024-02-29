@@ -17,7 +17,9 @@ html {
 }
 
 body {
-    margin: 0
+    background-color: #212121ac;
+    margin: 0;
+    color: #fff;
 }
 
 h1,
@@ -42,6 +44,7 @@ h2{
 p{
     font-size: 20px;
     line-height: 1.5;
+
 }
 
 article{
@@ -50,6 +53,7 @@ article{
 
 html,
 body {
+    background-color: #212121b3;
     font-family: Verdana, sans-serif;
     font-size: 15px;
     line-height: 1.5
