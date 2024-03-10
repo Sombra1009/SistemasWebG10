@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once('config.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -28,10 +28,6 @@ session_start();
     <?php
     require('gameContainer.php');
     ?>
-
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <p>Prueba</p>
 </body>
 
 </html>

@@ -13,7 +13,7 @@
 
         <div class="derecha">
             <?php
-            if (!isset($_SESSION["esAdmin"])) {
+            if (!isset($_SESSION["vendedor"])) {
                 ?>
                 <a href="upload.php">AdminPanel</a>
                 <?php
