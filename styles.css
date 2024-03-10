@@ -32,21 +32,21 @@ h6 {
     margin: 10px 0
 }
 
-h1{
+h1 {
     font-size: 36px
 }
 
-h2{
+h2 {
     font-size: 35px;
 }
 
-p{
+p {
     font-size: 20px;
     line-height: 1.5;
 
 }
 
-article{
+article {
     padding-top: 60px
 }
 
@@ -59,52 +59,103 @@ body {
     padding-top: 80px;
 }
 
-.titulo{
+.titulo {
     font-size: 300%;
     font-family: Roboto;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: white;
 }
 
-header{
-    display: flex;
+img {
+    object-fit: cover;
+}
+
+header {
+    display: block;
     align-items: center;
     justify-content: center;
     gap: 15%;
-    height: 70px;
+    height: 120px;
     top: 0;
     position: fixed;
     width: 100%;
 }
 
-header .titulo{
+header .titulo {
+    background-color: #0c0c0c;
     width: 100%;
     height: 70px;
-    overflow: hidden;
-    padding: 8px 16px;
-    float: left;
-    width: auto;
+    padding: 0;
+    margin: 0;
     border: none;
     display: flex;
     align-items: center;
-    flex-direction: row;
-    outline: 0;
+    justify-content: center;
 }
 
-header .botones{
-    display:flex;
+header .titulo>div {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    margin-top: 0px;
+    top: 0;
+}
+
+header .titulo .izquierda {
+    margin-right: auto;
+    margin-left: 10px;
+}
+
+header .titulo .izquierda>img {
+    height: 70px;
+    margin-right: auto;
+}
+header .titulo .izquierda>a {
+    height: 70px;
+    margin-right: auto;
+}
+header .titulo .izquierda>a:hover {
+    background-color:#131212;
+    border-radius: 20px;
+}
+header .titulo .izquierda>a>img {
+    height: 70px;
+    margin-right: auto;
+    filter: invert(100%);
+}
+
+header .titulo .centro {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header .titulo .derecha {
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 10px;
+}
+
+header .botones {
+    display: flex;
     justify-content: space-between;
-    position: absolute;
+    overflow: hidden;
     bottom: 0;
     width: 100%;
 }
 
-header .botones a{
+header .botones a {
     background-color: #121212;
     color: #8f72b7;
     text-align: center;
@@ -112,43 +163,42 @@ header .botones a{
     line-height: 50px;
     border: none;
     text-decoration: none !important;
-    transition: background-color 0.3s; /* Añade una transición suave al cambiar el color de fondo GitHubCopilot*/
+    transition: background-color 0.3s;
 }
 
-header .botones a:hover{
+header .botones a:hover {
     background-color: #1b1b1b;
 }
 
-.cabezera{
-    display: grid;
-    position: sticky;
-    width: 100%;
-    top: 0px;
-    margin: 0;
-    height: 120px;
-    background-color: #0c0c0c;
-    color: white;
-}
-
-.barraPrincipal{
-    width: 100%;
-    height: 70px;
-    overflow: hidden;
-    padding: 8px 16px;
-    float: left;
-    width: auto;
-    border: none;
+header form {
     display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
     align-items: center;
-    flex-direction: row;
-    outline: 0;
 }
 
-.barraPrincipal > * {
-    margin: 2px 2px 2px 2px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    top: 0;
+header input[type="text"] {
+    width: 500px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+header input[type="submit"] {
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding: 5px 20px;
+    background-color: #8f72b7;
+    color: white;
+    cursor: pointer;
+}
+
+header input[type="submit"]:hover {
+    background-color: #7d65a0;
 }
 
 .carritoContainer{
@@ -208,7 +258,7 @@ header .botones a:hover{
     
 }
 
-.gameContainer{
+.gameContainer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -216,18 +266,19 @@ header .botones a:hover{
     margin-bottom: 20px;
 }
 
-.gameContainer>div{
-    box-shadow: 0 0 5px 0px rgba(0,0,0,0.75);
+.gameContainer>div {
+    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.75);
     background-color: #181818;
     border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.gameContainer>div:hover{
+.gameContainer>div:hover {
     background-color: #111111;
 }
 
-.gameContainer>div img{
-    object-fit: cover;
+.gameContainer>div img {
     border-radius: 20px 20px 0px 0px;
     width: 200px;
     height: 150px;
@@ -327,7 +378,101 @@ header .botones a:hover{
     font-weight: 500;
 }
 
-.informacion{
+.gameBuyContainer{
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+   
+}
+
+.gameBuyContainer>div{
+    box-shadow: 0 0 5px 0px rgba(0,0,0,0.75);
+    background-color: #181818;
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+
+.gameBuyContainer>div:hover{
+    background-color: #111111;
+  
+}
+
+.gameBuyContainer>div .portada{
+    object-fit: cover;
+    border-radius: 0px 0px 0px 10px;
+    width: 400px;
+    height: 300px;
+    margin-left: 0px;
+}
+.estrellas> img{
+    object-fit: cover;
+   
+    margin-left: 15px;
+    width: 20px;
+    height: 20px;
+}
+
+
+.gameBuyContainer button:hover{
+    background-color: #6f598f;
+}
+
+.gameBuyContainer>p:first-child{
+    box-shadow: 0 0 5px 0px rgba(0,0,0,0.75);
+    background-color: #111111;
+    font-size: 25px;
+    font-weight: 300;
+}
+.gameBuyContainer>.gameContainer{
+ margin-top: 10px;
+}
+.buyInteracion{
+    margin-left: auto;
+    justify-content: space-between;
+    margin-right: 20px;
+  
+    align-items:flex-end
+}
+
+.buyInteracion>div{
+    display: flex;
+    
+    box-shadow: 0 0 5px 0px rgba(0,0,0,0.75);
+    
+}
+.buyInteracion>img{
+  size: 5px;
+}
+
+.buyinformacion{
+    justify-content: space-between;
+    display: flex;
+    gap: 150px;
+}
+.buyinformacion>.precio{
+   
+    margin-top: auto;
+    font-size: 25px;
+    font-weight: 300;
+}
+.buyinformacion>img{
+   
+    margin-top: 0;
+    
+}
+
+.buyinformacion .precio{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.informacion {
     height: 150px;
     display: flex;
     justify-content: center;
@@ -336,17 +481,17 @@ header .botones a:hover{
     gap: 15px;
 }
 
-.informacion>p:first-child{
+.informacion>p:first-child {
     font-size: 25px;
     font-weight: 300;
 }
 
-.informacion .precio{
+.informacion .precio {
     font-size: 20px;
     font-weight: 500;
 }
 
-.informacion .precio span{
+.informacion .precio span {
     font-size: 17px;
     font-weight: 300;
 
@@ -360,61 +505,104 @@ header .botones a:hover{
     height: 35;
     border-radius: 10px;
     border: none;
-    
+
     font-size: 17px;
     font-weight: 300;
     cursor: pointer;
 }
 
-.informacion button:hover{
+.informacion button:hover {
     background-color: #6f598f;
 }
 
-.leftItem{
-    height: 70px;
-    margin-right: auto; 
+.evento {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-color: #ffebc6;
+    width: 100%;
+    height: 420px;
+    margin-bottom: 50px;
+    padding: 0px;
 }
 
-.centerItem{
+.evento a {
+    cursor: pointer;
+}
+
+.evento .derecha {
+    margin-top: 200%;
+}
+
+.evento .centro {
+    height: 420px;
+}
+
+.evento .izquierda {
+    margin-top: 200%;
+}
+
+.sesion{
+    background-color: #0b0b0b;
+    width: 600px;
     margin: auto;
+    padding-left: 20px;
+    padding-bottom: 50px;
 }
 
-.rightItem{
-    margin-top: 40px;
-    margin-left: auto;
-    height: 70px;
-    float: right !important;
-    align-items: flex-end;
+.sesion form {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.barraBusqueda{
-    width: 200px;
-    height: 30px;
-    border: none;
-    padding: 5px;
-    box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+.sesion p {
+    font-size: 13px;
+    margin: 30px auto 5px 30px;
 }
 
-input[type="text"] {
+.sesion p a{
+    color: #fdaf4a;
+}
+
+.sesion form label{
+    margin: 30px auto 5px 30px;
+    font-size: 20px;
+}
+
+.sesion input[type="text"] {
     width: 500px;
     height: 50px;
     border: none;
     border-radius: 5px;
     padding: 5px;
-    box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
 
-input[type="submit"] {
-    height: 30px;
+.sesion input[type="password"] {
+    width: 500px;
+    height: 50px;
     border: none;
     border-radius: 5px;
-    margin-left: 10px;
+    padding: 5px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.sesion input[type="submit"] {
+    height: 50px;
+    width: 80%;
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
     padding: 5px 20px;
-    background-color: #8f72b7;
-    color: white;
+    background-color: #ffbd50;
+    color: black;
+    font-size: 30px;
     cursor: pointer;
 }
 
-input[type="submit"]:hover {
-    background-color: #7d65a0;
+.sesion input[type="submit"]:hover {
+    background-color: #ce9843;
 }
