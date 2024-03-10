@@ -159,12 +159,28 @@ header .botones a:hover{
 }
 .juegoCarrito{
     display: flex;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 .resumen{
     margin-left: 30px;
 }
 
+.foro,
+.noticias{
+    overflow: auto;
+    height: 400;
+    width: 200;
+}
+
+.foro>p:first-child,
+.noticias>p:first-child{
+    font-size: 25px;
+}
+
+.foro>p,
+.noticias>p{
+    font-size: 15px;
+}
 
 .resumen>p:first-child,
 .carrito>p:first-child{
@@ -196,7 +212,7 @@ header .botones a:hover{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 40px;
     margin-bottom: 20px;
 }
 
@@ -220,7 +236,7 @@ header .botones a:hover{
 .gameBuyContainer{
     justify-content: center;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 40px;
     margin-bottom: 20px;
     margin-left: 20px;
     margin-right: 20px;
@@ -292,7 +308,7 @@ header .botones a:hover{
 .buyinformacion{
     justify-content: space-between;
     display: flex;
-    gap: 200px;
+    gap: 150px;
 }
 .buyinformacion>.precio{
    
