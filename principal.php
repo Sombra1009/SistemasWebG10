@@ -17,51 +17,21 @@ session_start();
 
 <body>
     <?php
-    require('cabecera.php')
+    require('cabeceraBotones.php')
         ?>
-    <main>
-        <p>Prueba</p>
-        <div class="gameContainer">
-            <div>
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
-                <div class=informacion>
-                    <p>Producto 1</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <div>
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
-                <div class=informacion>
-                    <p>Producto 1</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <div>
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
-                <div class=informacion>
-                    <p>Producto 1</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <div>
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
-                <div class=informacion>
-                    <p>Producto 1</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
+    <article class="evento">
+        <a><img src="./img/flechaIzq.png" class="izquierda" alt="anterior evento"></a>
+        <a><img src="./img/logoFoto.jpg" class="centro" alt="evento"></a>
+        <a><img src="./img/flechaDer.png" class="derecha" alt="siguiente evento"></a>
+    </article>
 
-        </div>
-        
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-        <p>Prueba</p>
-    </main>
+    <?php
+    require('gameContainer.php');
+    ?>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <p>Prueba</p>
 </body>
-
 
 </html>
