@@ -151,6 +151,47 @@ header .botones a:hover{
     top: 0;
 }
 
+.carritoContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+   
+}
+.juegoCarrito{
+    display: flex;
+    margin-top: 30px;
+}
+.resumen{
+    margin-left: 30px;
+}
+
+
+.resumen>p:first-child,
+.carrito>p:first-child{
+    box-shadow: 0 0 5px 0px rgba(0,0,0,0.75);
+    background-color: #111111;
+    font-size: 25px;
+    font-weight: 300;
+
+}
+
+.carrito>div img{
+
+    object-fit: cover;
+   
+    margin-left: 15px;
+    width: 150px;
+    height: 200px;
+
+}
+.carritoContainer>div{
+
+    box-shadow: 0 0 5px 0px rgba(0,0,0,0.75);
+    background-color: #181818;
+    border-radius: 20px;
+    
+}
+
 .gameContainer{
     display: flex;
     justify-content: center;
@@ -174,6 +215,100 @@ header .botones a:hover{
     border-radius: 20px 20px 0px 0px;
     width: 200px;
     height: 150px;
+}
+
+.gameBuyContainer{
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+   
+}
+
+.gameBuyContainer>div{
+    box-shadow: 0 0 5px 0px rgba(0,0,0,0.75);
+    background-color: #181818;
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+
+.gameBuyContainer>div:hover{
+    background-color: #111111;
+  
+}
+
+.gameBuyContainer>div .portada{
+    object-fit: cover;
+    border-radius: 0px 0px 0px 10px;
+    width: 400px;
+    height: 300px;
+    margin-left: 0px;
+}
+.estrellas> img{
+    object-fit: cover;
+   
+    margin-left: 15px;
+    width: 20px;
+    height: 20px;
+}
+
+
+.gameBuyContainer button:hover{
+    background-color: #6f598f;
+}
+
+.gameBuyContainer>p:first-child{
+    box-shadow: 0 0 5px 0px rgba(0,0,0,0.75);
+    background-color: #111111;
+    font-size: 25px;
+    font-weight: 300;
+}
+.gameBuyContainer>.gameContainer{
+ margin-top: 10px;
+}
+.buyInteracion{
+    margin-left: auto;
+    justify-content: space-between;
+    margin-right: 20px;
+  
+    align-items:flex-end
+}
+
+.buyInteracion>div{
+    display: flex;
+    
+    box-shadow: 0 0 5px 0px rgba(0,0,0,0.75);
+    
+}
+.buyInteracion>img{
+  size: 5px;
+}
+
+.buyinformacion{
+    justify-content: space-between;
+    display: flex;
+    gap: 200px;
+}
+.buyinformacion>.precio{
+   
+    margin-top: auto;
+    font-size: 25px;
+    font-weight: 300;
+}
+.buyinformacion>img{
+   
+    margin-top: 0;
+    
+}
+
+.buyinformacion .precio{
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .informacion{
@@ -201,6 +336,8 @@ header .botones a:hover{
 
 }
 
+.gameBuyContainer button,
+.resumen>button,
 .informacion button{
     background-color: #8f72b7;
     width: 100px;

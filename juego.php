@@ -20,12 +20,47 @@ session_start();
     require('cabecera.php')
         ?>
     <main>
-        <div >
-            <img src="img/flechaIzq.png" alt="">
-            <img src="img/logoFoto.jpg" alt="" >
-            <img src="img/flechaDer.png" alt="">
-        </div>
-        <p>Prueba</p>
+        
+    <div class="gameBuyContainer">
+        <p>Nombre</p>
+            <div>
+            <div style="display: flex;">
+                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" class="portada">
+                <div class="buyinformacion">
+                   <p>descripcion</p>
+                    <p class="precio">10<span>,57</span>€</p>
+                    
+                </div>
+            </div>
+            <div class="buyInteracion">
+                
+                    <p>principal secundarios platino</p>
+                    <p>datos</p>
+                    <div >
+                        <button>Guia</button> 
+                        <button>Trucos</button>
+                        <button>Reseñas</button>
+                    </div>
+                    <div class="estrellas" >
+                        <p>Ranking</p>
+                        <img src="img/estrellaLlena.png" alt="Estrella llena" >
+                        <img src="img/estrellaLlena.png" alt="Estrella llena" >
+                        <img src="img/estrellaLlena.png" alt="Estrella llena" >
+                        <img src="img/estrellaLlena.png" alt="Estrella llena" >
+                        <img src="img/estrellaLlena.png" alt="Estrella llena" >
+                       
+                    </div>
+                    <div >
+                        <button>Comprar</button>
+                    </div>
+                
+            </div>
+       </div>
+
+    </div>
+
+    <div class="gameBuyContainer">
+        <p>Juegos similares</p>
         <div class="gameContainer">
             <div>
                 <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
@@ -59,8 +94,18 @@ session_start();
                     <button>Comprar</button>
                 </div>
             </div>
-
+            <div>
+                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
+                <div class=informacion>
+                    <p>Producto 1</p>
+                    <p class="precio">10<span>,57</span>€</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
         </div>
+    </div>
+
+       
         
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
