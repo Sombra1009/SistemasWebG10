@@ -39,7 +39,7 @@
             VirtualVenture ofrece un espacio interactivo para compartir experiencias y participar en discusiones
             relacionadas con los juegos y la plataforma.
         </p>
-        <a href="principal.html"><img src="img/logoFoto.jpg" style="margin: 0 auto; display: block;" alt="Logotipo de la empresa como foto"></a>
+        <a href="principal.php"><img src="img/logoFoto.jpg" style="margin: 0 auto; display: block;" alt="Logotipo de la empresa como foto"></a>
         <footer style="display: flex; justify-content: center; align-items: center; height: 100%; margin-top: 250px; margin-bottom: 20px;">
             <a href="./Practica1/contacto.html">CONTACTO</a>
         </footer>
