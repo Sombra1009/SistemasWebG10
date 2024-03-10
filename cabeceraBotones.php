@@ -19,16 +19,16 @@
                 <?php
             }
             ?>
-            <a href="index.html"><img src="img/LogoCarrito.png" alt="carrito"></a>
+            <a href="carrito.php"><img src="img/LogoCarrito.png" alt="carrito"></a>
             <a href="login.php"><img src="img/usuarioLogo.png" alt="carrito"></a>
         </div>
     </div>
 
     <div class="botones">
-        <a href="Practica1/bocetos.html">NOTICIAS</a>
-        <a href="Practica1/miembros.html">CATEGORIAS</a>
-        <a href="Practica1/detalles.html">OFERTAS</a>
-        <a href="Practica1/planificacion.html">PROXIMOS JUEGOS</a>
-        <a href="Practica1/planificacion.html">FORO</a>
+        <a href="noticias.php">NOTICIAS</a>
+        <a href="">CATEGORIAS</a>
+        <a href="ofertas.php">OFERTAS</a>
+        <a href="">PROXIMOS JUEGOS</a>
+        <a href="foro.php">FORO</a>
     </div>
 </header>
