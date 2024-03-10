@@ -4,9 +4,112 @@ class Producto{
     
     use MagicProperties;
 
-    function getAllProducts(){
-        $result = false;
+    public static function buscaPorNombre($nombre){
+        $result = [];
+
+        $conn = BD::getInstance()->getConexionBd();
+        $query = 'SELECT * FROM productos WHERE nombre LIKE \'%s%\'';
+        $query = sprintf($query, $conn->real_escape_string($nombre));
+
+        $rs = $conn->query($query);
+        if ($rs) {
+            while ($fila = $rs->fetch_assoc()) {
+                $result[] = new Producto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['cantidad'], $fila['imagen'], $fila['valoracion'], $fila['categoria']);
+            }
+            $rs->free();
+        }
+
+        return $result;
     }
+
+    public static function getAllProducts(){
+        $result = [];
+
+        $conn = BD::getInstance()->getConexionBd();
+        $query = 'SELECT * FROM productos';
+
+        $rs = $conn->query($query);
+        if ($rs) {
+            while ($fila = $rs->fetch_assoc()) {
+                $result[] = new Producto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['cantidad'], $fila['imagen'], $fila['valoracion'], "categoria");
+            }
+            $rs->free();
+        }
+        else
+            $result = false;
+
+        return $result;
+    }
+
+    public static function buscarProductoDeCarrito($mail){
+        $result = [];
+
+        $conn = BD::getInstance()->getConexionBd();
+        $query = 'SELECT * FROM productos P INNER JOIN order_item OI ON P.id = OI.product_id INNER JOIN orders O ON OI.order_id = O.order_id WHERE O.mail = %s AND O.state = %d';
+        $query = sprintf($query, $mail, Orders::CARRITO);
+
+        $rs = $conn->query($query);
+        if ($rs) {
+            while ($fila = $rs->fetch_assoc()) {
+                $result[] = new Producto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['cantidad'], $fila['imagen'], $fila['valoracion'], $fila['categoria']);
+            }
+            $rs->free();
+        }
+
+        return $result;
+    }
+
+    public static function buscarProductosCompradosDeUsuario($mail){
+        $result = [];
+
+        $conn = BD::getInstance()->getConexionBd();
+        $query = 'SELECT * FROM productos P INNER JOIN order_item OI ON P.id = OI.product_id INNER JOIN orders O ON OI.order_id = O.order_id WHERE O.mail = %s AND O.state = %d';
+        $query = sprintf($query, $mail, Orders::COMPRA);
+
+        $rs = $conn->query($query);
+        if ($rs) {
+            while ($fila = $rs->fetch_assoc()) {
+                $result[] = new Producto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['cantidad'], $fila['imagen'], $fila['valoracion'], $fila['categoria']);
+            }
+            $rs->free();
+        }
+
+        return $result;
+    }
+
+    public static function insertaProducto($nombre, $descripcion, $precio, $cantidad, $imagen, $valoracion, $categoria){
+        $conn = BD::getInstance()->getConexionBd();
+        $query = 'INSERT INTO productos (nombre, descripcion, precio, cantidad, imagen, valoracion, categoria) VALUES (\'%s\', \'%s\', %d, %d, \'%s\', %d, %d)';
+        $query = sprintf($query, $conn->real_escape_string($nombre), $conn->real_escape_string($descripcion), $precio, $cantidad, $conn->real_escape_string($imagen), $valoracion, $categoria);
+
+        $rs = $conn->query($query);
+        if ($rs) {
+            $result = $conn->insert_id;
+        } else {
+            $result = false;
+        }
+
+        return $result;
+    }
+
+    public static function buscarProductosPorMail($mail){
+        $result = [];
+
+        $conn = BD::getInstance()->getConexionBd();
+        $query = 'SELECT * FROM productos P INNER JOIN order_item OI ON P.id = OI.product_id INNER JOIN orders O ON OI.order_id = O.order_id WHERE O.mail = %s AND O.state = %d';
+        $query = sprintf($query, $mail, Orders::COMPRA);
+
+        $rs = $conn->query($query);
+        if ($rs) {
+            while ($fila = $rs->fetch_assoc()) {
+                $result[] = new Producto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['cantidad'], $fila['imagen'], $fila['valoracion'], $fila['categoria']);
+            }
+            $rs->free();
+        }
+
+        return $result;
+    }
+
     
     private $id;
     private $nombre;
