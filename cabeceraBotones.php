@@ -26,9 +26,9 @@
 
     <div class="botones">
         <a href="noticias.php">NOTICIAS</a>
-        <a href="">CATEGORIAS</a>
+        <a href="categoria.php">CATEGORIAS</a>
         <a href="ofertas.php">OFERTAS</a>
-        <a href="">PROXIMOS JUEGOS</a>
+        <a href="proximosJuegos.php">PROXIMOS JUEGOS</a>
         <a href="foro.php">FORO</a>
     </div>
 </header>

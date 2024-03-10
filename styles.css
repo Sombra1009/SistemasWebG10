@@ -362,10 +362,21 @@ header input[type="submit"]:hover {
     gap: 9px;
 }
 
-.ofertasInfo>.precio{
-   
-    margin-top: auto;
+
+
+.ofertasInfo>p:first-child {
     font-size: 25px;
+    font-weight: 300;
+}
+
+.ofertasInfo .precio {
+    margin-top: auto;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.ofertasInfo .precio span {
+    font-size: 17px;
     font-weight: 300;
 }
 

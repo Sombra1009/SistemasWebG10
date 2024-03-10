@@ -22,14 +22,14 @@ session_start();
     <main>
 
     <div class="gameBuyContainer" style="margin-top: 30px;">
-        <p>Ofertas</p>
+        <p>Juegos</p>
         <div class="gameContainer">
             <div class="juegoCarrito">
                 <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
                 <div class="ofertasInfo">
                    <p>Nombre</p>
                  
-                    <p class="precio">10<span>,57</span>%</p>
+                    <p class="precio">10<span>,57</span>€</p>
                     
                 </div>
             </div>
@@ -38,7 +38,7 @@ session_start();
                 <div class="ofertasInfo">
                    <p>Nombre</p>
                  
-                    <p class="precio">10<span>,57</span>%</p>
+                    <p class="precio">10<span>,57</span>€</p>
                     
                 </div>
             </div>
@@ -47,7 +47,7 @@ session_start();
                 <div class="ofertasInfo">
                    <p>Nombre</p>
                  
-                    <p class="precio">10<span>,57</span>%</p>
+                    <p class="precio">10<span>,57</span>€</p>
                     
                 </div>
             </div>
@@ -56,7 +56,7 @@ session_start();
                 <div class="ofertasInfo">
                    <p>Nombre</p>
                  
-                    <p class="precio">10<span>,57</span>%</p>
+                    <p class="precio">10<span>,57</span>€</p>
                     
                 </div>
             </div>
@@ -65,7 +65,7 @@ session_start();
                 <div class="ofertasInfo">
                    <p>Nombre</p>
                  
-                    <p class="precio">10<span>,57</span>%</p>
+                    <p class="precio">10<span>,57</span>€</p>
                     
                 </div>
             </div>
@@ -73,57 +73,7 @@ session_start();
     </div>
 
 
-    <div class="gameBuyContainer" style="margin-top: 30px;">
-        <p>Ofertas por tu nivel</p>
-        <div class="gameContainer">
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>%</p>
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>%</p>
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>%</p>
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>%</p>
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>%</p>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-
+   
        
         
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
