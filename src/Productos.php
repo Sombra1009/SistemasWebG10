@@ -31,10 +31,12 @@ class Producto{
         $rs = $conn->query($query);
         if ($rs) {
             while ($fila = $rs->fetch_assoc()) {
-                $result[] = new Producto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['cantidad'], $fila['imagen'], $fila['valoracion'], $fila['categoria']);
+                $result[] = new Producto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['cantidad'], $fila['imagen'], $fila['valoracion'], "categoria");
             }
             $rs->free();
         }
+        else
+            $result = false;
 
         return $result;
     }

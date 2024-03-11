@@ -116,12 +116,15 @@ session_start();
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 
        
         
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <p>Prueba</p>
+=======
+>>>>>>> origin/HEAD
     </main>
 </body>
 
