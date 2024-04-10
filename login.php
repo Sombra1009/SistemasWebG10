@@ -22,7 +22,7 @@ session_start();
     <div class="sesion">
         <h1>Inicio de sesión</h1>
 
-        <form action="login.php" method="post">
+        <form action="ProcesorLogin.php" method="post">
             <label for="usuario">Usuario:</label>
             <input type="text" name="usuario" id="usuario" placeholder="Usuario">
             <label for="password">Contraseña:</label>
