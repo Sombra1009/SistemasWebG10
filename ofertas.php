@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once('config.php')
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -19,111 +19,14 @@ session_start();
     <?php
     require('cabecera.php')
         ?>
-    <main>
-
-    <div class="gameBuyContainer" style="margin-top: 30px;">
-        <p>Ofertas</p>
-        <div class="gameContainer">
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>%</p>
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>%</p>
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>%</p>
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>%</p>
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>%</p>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="gameBuyContainer" style="margin-top: 30px;">
-        <p>Ofertas por tu nivel</p>
-        <div class="gameContainer">
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>%</p>
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>%</p>
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>%</p>
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>%</p>
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>%</p>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    </main>
+    
+    <?php
+    require('gameContainerDisc.php')
+        ?>
+    <?php
+    require('gameContainerDiscLevel.php')
+        ?>
+    
 </body>
 
 

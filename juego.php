@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once 'config.php';
+$id = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -14,96 +15,74 @@ session_start();
     <title>VirtualVenture</title>
 </head>
 
+<?php
+   
+    $product = Producto::getProduct($id);
+    $carrito = Orders::buscaCarritoUser($_SESSION['id']);
+
+?>
 
 <body>
     <?php
-    require('cabecera.php')
+    require ('cabecera.php')
         ?>
     <main>
+
         
-    <div class="gameBuyContainer">
-        <p>Nombre</p>
+
+        <div class="gameBuyContainer">
+            <?php
+            echo "<p>".$product->nombre."</p>";
+            ?>
             <div>
-            <div style="display: flex;">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" class="portada">
-                <div class="buyinformacion">
-                   <p>descripcion</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    
+                <div style="display: flex;">
+                    <?php
+                    echo "<img src='" . $product->imagen . "' alt='Portada del juego " . $product->nombre . "' class='portada'>";
+                    ?>
+                    <div class="buyinformacion">
+                        <?php
+                        echo "<p>" . $product->descripcion . "</p>";
+                        echo "<p class='precio'>" . $product->precio . "€</p>";
+                        ?>
+
+                    </div>
                 </div>
-            </div>
-            <div class="buyInteracion">
-                
+                <div class="buyInteracion">
+
                     <p>principal secundarios platino</p>
                     <p>datos</p>
-                    <div >
-                        <button>Guia</button> 
+                    <div>
+                        <button>Guia</button>
                         <button>Trucos</button>
                         <button>Reseñas</button>
                     </div>
-                    <div class="estrellas" >
+                    <div class="estrellas">
                         <p>Ranking</p>
-                        <img src="img/estrellaLlena.png" alt="Estrella llena" >
-                        <img src="img/estrellaLlena.png" alt="Estrella llena" >
-                        <img src="img/estrellaLlena.png" alt="Estrella llena" >
-                        <img src="img/estrellaLlena.png" alt="Estrella llena" >
-                        <img src="img/estrellaLlena.png" alt="Estrella llena" >
-                       
-                    </div>
-                    <div >
-                        <button>Comprar</button>
-                    </div>
-                
-            </div>
-       </div>
+                        <img src="img/estrellaLlena.png" alt="Estrella llena">
+                        <img src="img/estrellaLlena.png" alt="Estrella llena">
+                        <img src="img/estrellaLlena.png" alt="Estrella llena">
+                        <img src="img/estrellaLlena.png" alt="Estrella llena">
+                        <img src="img/estrellaLlena.png" alt="Estrella llena">
 
-    </div>
+                    </div>
+                    <div>
+                    <?php 
+                    echo "<a href ='procesarProducto.php?producto=". $product->id  ."'><button>Compra</button></a>"
+                    ?>
+                    
+                    </div>
 
-    <div class="gameBuyContainer">
-        <p>Juegos similares</p>
-        <div class="gameContainer">
-            <div>
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
-                <div class=informacion>
-                    <p>Producto 1</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    <button>Comprar</button>
                 </div>
             </div>
-            <div>
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
-                <div class=informacion>
-                    <p>Producto 1</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <div>
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
-                <div class=informacion>
-                    <p>Producto 1</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <div>
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
-                <div class=informacion>
-                    <p>Producto 1</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <div>
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
-                <div class=informacion>
-                    <p>Producto 1</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
+
         </div>
-    </div>
+
+        <div class="gameBuyContainer">
+            <p>Juegos similares</p>
+            <?php
+            require ('gameContainer.php');
+            ?>
+        </div>
     </main>
 </body>
 

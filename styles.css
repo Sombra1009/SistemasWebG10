@@ -75,6 +75,11 @@ img {
     object-fit: cover;
 }
 
+.error {
+    color: red;
+    font-size: 12px;
+}
+
 header {
     display: block;
     align-items: center;
@@ -132,7 +137,6 @@ header .titulo .izquierda>a:hover {
 header .titulo .izquierda>a>img {
     height: 70px;
     margin-right: auto;
-    filter: invert(100%);
 }
 
 header .titulo .centro {
@@ -216,6 +220,7 @@ header input[type="submit"]:hover {
     border-radius: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
+    width: 200px;
 }
 
 .gameContainer>div:hover {
@@ -226,6 +231,10 @@ header input[type="submit"]:hover {
     border-radius: 20px 20px 0px 0px;
     width: 200px;
     height: 150px;
+}
+
+.gameContainer a{
+    text-decoration: none;
 }
 
 .carritoContainer{
@@ -427,7 +436,7 @@ header input[type="submit"]:hover {
 }
 .gameBuyContainer button,
 .resumen>button,
-.informacion a {
+.informacion button {
     background-color: #8f72b7;
     width: 100px;
     height: 35;
@@ -501,7 +510,7 @@ header input[type="submit"]:hover {
     font-size: 20px;
 }
 
-.sesion input[type="text"] {
+.sesion input {
     width: 500px;
     height: 50px;
     border: none;
@@ -511,7 +520,7 @@ header input[type="submit"]:hover {
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
 
-.sesion input[type="password"] {
+.sesion input {
     width: 500px;
     height: 50px;
     border: none;
@@ -519,6 +528,9 @@ header input[type="submit"]:hover {
     border-radius: 5px;
     padding: 5px;
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+.sesion input[type="file"] {
+    color: white;
 }
 
 .sesion input[type="submit"] {

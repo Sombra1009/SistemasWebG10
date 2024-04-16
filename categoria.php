@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once 'config.php';
+$id = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -17,61 +18,29 @@ session_start();
 
 <body>
     <?php
-    require('cabecera.php')
+    require ('cabecera.php')
         ?>
     <main>
+    <div class="gameContainer">
+        <?php
+        $productos = Producto::buscaProductoPorCategoria($id);
+        foreach ($productos as $producto) {
+          
+            echo "<div>";
+            echo "<a href='juego.php?id=". $producto->id ."'>";
+            echo "<img src='" . $producto->imagen . "' alt='imagen del producto'>";
+            echo "<div class=informacion>";
+            echo "<p>" . $producto->nombre ."</p>";
+            echo "</div>";
+            echo "</a>";
+            echo "</div>";
+            
+        }
+        ?>
 
-    <div class="gameBuyContainer" style="margin-top: 30px;">
-        <p>Juegos</p>
-        <div class="gameContainer">
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>€</p>
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>€</p>
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>€</p>
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>€</p>
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="ofertasInfo">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>€</p>
-                    
-                </div>
-            </div>
-        </div>
     </div>
     </main>
+    
 </body>
 
 

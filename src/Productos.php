@@ -1,134 +1,227 @@
 <?php
-
 class Producto{
     
     use MagicProperties;
 
-    public static function buscaPorNombre($nombre){
+    public static function getAllProducts()
+    {
         $result = [];
-
         $conn = BD::getInstance()->getConexionBd();
-        $query = 'SELECT * FROM productos WHERE nombre LIKE \'%s%\'';
-        $query = sprintf($query, $conn->real_escape_string($nombre));
-
+        $query = "SELECT * FROM producto";
         $rs = $conn->query($query);
         if ($rs) {
             while ($fila = $rs->fetch_assoc()) {
-                $result[] = new Producto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['cantidad'], $fila['imagen'], $fila['valoracion'], $fila['categoria']);
+                $result[] = new Producto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['stock'], $fila['imagen'], $fila['valoracion'], $fila['user_id'], $fila['descuento'], $fila['nivel'], $fila['fecha']);
             }
             $rs->free();
-        }
-
-        return $result;
-    }
-
-    public static function getAllProducts(){
-        $result = [];
-
-        $conn = BD::getInstance()->getConexionBd();
-        $query = 'SELECT * FROM productos';
-
-        $rs = $conn->query($query);
-        if ($rs) {
-            while ($fila = $rs->fetch_assoc()) {
-                $result[] = new Producto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['cantidad'], $fila['imagen'], $fila['valoracion'], "categoria");
-            }
-            $rs->free();
-        }
-        else
-            $result = false;
-
-        return $result;
-    }
-
-    public static function buscarProductoDeCarrito($mail){
-        $result = [];
-
-        $conn = BD::getInstance()->getConexionBd();
-        $query = 'SELECT * FROM productos P INNER JOIN order_item OI ON P.id = OI.product_id INNER JOIN orders O ON OI.order_id = O.order_id WHERE O.mail = %s AND O.state = %d';
-        $query = sprintf($query, $mail, Orders::CARRITO);
-
-        $rs = $conn->query($query);
-        if ($rs) {
-            while ($fila = $rs->fetch_assoc()) {
-                $result[] = new Producto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['cantidad'], $fila['imagen'], $fila['valoracion'], $fila['categoria']);
-            }
-            $rs->free();
-        }
-
-        return $result;
-    }
-
-    public static function buscarProductosCompradosDeUsuario($mail){
-        $result = [];
-
-        $conn = BD::getInstance()->getConexionBd();
-        $query = 'SELECT * FROM productos P INNER JOIN order_item OI ON P.id = OI.product_id INNER JOIN orders O ON OI.order_id = O.order_id WHERE O.mail = %s AND O.state = %d';
-        $query = sprintf($query, $mail, Orders::COMPRA);
-
-        $rs = $conn->query($query);
-        if ($rs) {
-            while ($fila = $rs->fetch_assoc()) {
-                $result[] = new Producto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['cantidad'], $fila['imagen'], $fila['valoracion'], $fila['categoria']);
-            }
-            $rs->free();
-        }
-
-        return $result;
-    }
-
-    public static function insertaProducto($nombre, $descripcion, $precio, $cantidad, $imagen, $valoracion, $categoria){
-        $conn = BD::getInstance()->getConexionBd();
-        $query = 'INSERT INTO productos (nombre, descripcion, precio, cantidad, imagen, valoracion, categoria) VALUES (\'%s\', \'%s\', %d, %d, \'%s\', %d, %d)';
-        $query = sprintf($query, $conn->real_escape_string($nombre), $conn->real_escape_string($descripcion), $precio, $cantidad, $conn->real_escape_string($imagen), $valoracion, $categoria);
-
-        $rs = $conn->query($query);
-        if ($rs) {
-            $result = $conn->insert_id;
         } else {
-            $result = false;
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
         }
-
+        return $result;
+    }
+    public static function getProduct($id)
+    {
+        $conn = BD::getInstance()->getConexionBd();
+        $query = sprintf("SELECT * FROM producto P WHERE P.id=%d", $conn->real_escape_string($id));
+        $rs = $conn->query($query);
+        $result = false;
+        if ($rs) {
+            $fila = $rs->fetch_assoc();
+            if ($fila) {
+                $result = new Producto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['stock'], $fila['imagen'], $fila['valoracion'], $fila['user_id'], $fila['descuento'], $fila['nivel'], $fila['fecha']);
+            }
+            $rs->free();
+        } else {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+        }
         return $result;
     }
 
-    public static function buscarProductosPorMail($mail){
-        $result = [];
-
+    public static function creaProducto($nombre, $descripcion, $precio, $stock, $imagen, $user_id)
+    {
+        $result = false;
         $conn = BD::getInstance()->getConexionBd();
-        $query = 'SELECT * FROM productos P INNER JOIN order_item OI ON P.id = OI.product_id INNER JOIN orders O ON OI.order_id = O.order_id WHERE O.mail = %s AND O.state = %d';
-        $query = sprintf($query, $mail, Orders::COMPRA);
+        $query = sprintf("INSERT INTO producto(nombre, descripcion, precio, stock, imagen, valoracion, user_id, descuento, nivel, fecha) VALUES('%s', '%s', %f, %d, '%s', %d, %d, 0, 1, NOW())"
+            , $conn->real_escape_string($nombre)
+            , $conn->real_escape_string($descripcion)
+            , $precio
+            , $stock
+            , $imagen
+            , $user_id
+            , $conn
+        );
+        if ( $conn->query($query) ) {
+            $result = new Producto($conn->insert_id, $nombre, $descripcion, $precio, $stock, $imagen, 0, $user_id, 0, 0, $conn->query("SELECT NOW()"));
+        } else {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+        }
+        return $result;
+    }
 
+    public static function buscaProductoPorNombre($nombre)
+    {
+        $result = [];
+        $conn = BD::getInstance()->getConexionBd();
+        $query = sprintf("SELECT * FROM producto P WHERE P.nombre LIKE '%%%s%%'", $conn->real_escape_string($nombre));
         $rs = $conn->query($query);
         if ($rs) {
             while ($fila = $rs->fetch_assoc()) {
-                $result[] = new Producto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['cantidad'], $fila['imagen'], $fila['valoracion'], $fila['categoria']);
+                $result[] = new Producto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['stock'], $fila['imagen'], $fila['valoracion'], $fila['user_id'], $fila['descuento'], $fila['nivel'], $fila['fecha']);
             }
             $rs->free();
+        } else {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
         }
-
         return $result;
     }
 
+    public static function buscaProductoPorCategoria($categoria)
+    {
+        $result = [];
+        $conn = BD::getInstance()->getConexionBd();
+        $query = sprintf("SELECT * FROM producto P INNER JOIN listaCategoria L ON P.id = L.idProd WHERE L.idCategoria=%d", $conn->real_escape_string($categoria));
+        $rs = $conn->query($query);
+        if ($rs) {
+            while ($fila = $rs->fetch_assoc()) {
+                $result[] = new Producto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['stock'], $fila['imagen'], $fila['valoracion'], $fila['user_id'], $fila['descuento'], $fila['nivel'], $fila['fecha']);
+            }
+            $rs->free();
+        } else {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+        }
+        return $result;
+    }
+
+    public static function buscaProductoPorUsuario($username)
+    {
+        $result = [];
+        $conn = BD::getInstance()->getConexionBd();
+        $query = sprintf("SELECT * FROM producto P INNER JOIN usuario U ON P.user_id = U.id WHERE U.username='%s'", $conn->real_escape_string($username));
+        $rs = $conn->query($query);
+        if ($rs) {
+            while ($fila = $rs->fetch_assoc()) {
+                $result[] = new Producto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['stock'], $fila['imagen'], $fila['valoracion'], $fila['user_id'], $fila['descuento'], $fila['nivel'], $fila['fecha']);
+            }
+            $rs->free();
+        } else {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+        }
+        return $result;
+    }
+
+    public static function getAllDiscountedProducts()
+    {
+        $result = [];
+        $conn = BD::getInstance()->getConexionBd();
+        $query = "SELECT * FROM producto WHERE descuento > 0 ORDER BY nivel ASC";
+        $rs = $conn->query($query);
+        if ($rs) {
+            while ($fila = $rs->fetch_assoc()) {
+                $result[] = new Producto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['stock'], $fila['imagen'], $fila['valoracion'], $fila['user_id'], $fila['descuento'], $fila['nivel'], $fila['fecha']);
+            }
+            $rs->free();
+        } else {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+        }
+        return $result;
+    }
+
+    public function borraProducto(){
+        $conn = BD::getInstance()->getConexionBd();
+        $query = sprintf("DELETE FROM producto WHERE id=%d", $conn->real_escape_string($this->id));
+        $result = $conn->query($query);
+        if (!$result) {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+        }
+        return $result;
+    }
+    public function cambiaDescuento($descuento){
+        $conn = BD::getInstance()->getConexionBd();
+        $query = sprintf("UPDATE producto SET descuento=%d WHERE id=%d", $conn->real_escape_string($descuento), $conn->real_escape_string($this->id));
+        $result = $conn->query($query);
+        if (!$result) {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+        }
+        return $result;
+    }
+
+    public function cambiaNivel($nivel){
+        $conn = BD::getInstance()->getConexionBd();
+        $query = sprintf("UPDATE producto SET nivel=%d WHERE id=%d", $conn->real_escape_string($nivel), $conn->real_escape_string($this->id));
+        $result = $conn->query($query);
+        if (!$result) {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+        }
+        return $result;
+    }
+
+    public function cambiaPrecio($precio){
+        $conn = BD::getInstance()->getConexionBd();
+        $query = sprintf("UPDATE producto SET precio=%d WHERE id=%d", $conn->real_escape_string($precio), $conn->real_escape_string($this->id));
+        $result = $conn->query($query);
+        if (!$result) {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+        }
+        return $result;
+    }
+
+    public function cambiaStock($stock){
+        $conn = BD::getInstance()->getConexionBd();
+        $query = sprintf("UPDATE producto SET stock=%d WHERE id=%d", $conn->real_escape_string($stock), $conn->real_escape_string($this->id));
+        $result = $conn->query($query);
+        if (!$result) {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+        }
+        return $result;
+    }
+    public function decrementaStock($cantidad){
+        $this->cambiaStock($this->stock - $cantidad);
+    }
+
+    public function cambiaValoracion($valoracion){
+        $conn = BD::getInstance()->getConexionBd();
+        $query = sprintf("UPDATE producto SET valoracion=%d WHERE id=%d", $conn->real_escape_string($valoracion), $conn->real_escape_string($this->id));
+        $result = $conn->query($query);
+        if (!$result) {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+        }
+        return $result;
+    }
+
+    public function cambiaImagen($imagen){
+        $conn = BD::getInstance()->getConexionBd();
+        $query = sprintf("UPDATE producto SET imagen='%s' WHERE id=%d", $conn->real_escape_string($imagen), $conn->real_escape_string($this->id));
+        $result = $conn->query($query);
+        if (!$result) {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+        }
+        return $result;
+    }
     
     private $id;
     private $nombre;
     private $descripcion;
     private $precio;
-    private $cantidad;
+    private $stock;
     private $imagen;
     private $valoracion;
-    private $categoria;
+    private $user_id;
+    private $descuento;
+    private $nivel;
+    private $fecha;
     
-    public function __construct($id, $nombre, $descripcion, $precio, $cantidad, $imagen, $valoracion, $categoria){
+    public function __construct($id, $nombre, $descripcion, $precio, $stock, $imagen, $valoracion, $user_id, $descuento, $nivel, $fecha){
         $this->id = $id;
         $this->nombre = $nombre;
         $this->descripcion = $descripcion;
         $this->precio = $precio;
-        $this->cantidad = $cantidad;
+        $this->stock = $stock;
         $this->imagen = $imagen;
         $this->valoracion = $valoracion;
-        $this->categoria = $categoria;
+        $this->user_id = $user_id;
+        $this->descuento = $descuento;
+        $this->nivel = $nivel;
+        $this->fecha = $fecha;
     }
     
     public function getId(){
@@ -163,12 +256,12 @@ class Producto{
         $this->precio = $precio;
     }
     
-    public function getCantidad(){
-        return $this->cantidad;
+    public function getstock(){
+        return $this->stock;
     }
     
-    public function setCantidad($cantidad){
-        $this->cantidad = $cantidad;
+    public function setstock($stock){
+        $this->stock = $stock;
     }
     
     public function getImagen(){
@@ -187,12 +280,23 @@ class Producto{
         $this->valoracion = $valoracion;
     }
     
-    public function getCategoria(){
-        return $this->categoria;
+    public function getDescuento(){
+        return $this->descuento;
     }
-    
-    public function setCategoria($categoria){
-        $this->categoria = $categoria;
+    public function setDescuento($descuento){
+        $this->descuento = $descuento;
+    }
+    public function getNivel(){
+        return $this->nivel;
+    }
+    public function setNivel($nivel){
+        $this->nivel = $nivel;
+    }
+    public function getFecha(){
+        return $this->fecha;
+    }
+    public function setFecha($fecha){
+        $this->fecha = $fecha;
     }
 
 }

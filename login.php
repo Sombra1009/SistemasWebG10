@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once 'config.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -21,8 +21,13 @@ session_start();
         ?>
     <div class="sesion">
         <h1>Inicio de sesión</h1>
+        <?php
+        if (isset($_GET['error'])) {
+            echo '<p class="error">Usuario o contraseña incorrectos</p>';
+        }
+        ?>
 
-        <form action="ProcesorLogin.php" method="post">
+        <form action="ProcesarLogin.php" method="post">
             <label for="usuario">Usuario:</label>
             <input type="text" name="usuario" id="usuario" placeholder="Usuario">
             <label for="password">Contraseña:</label>

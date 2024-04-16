@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once 'config.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -20,11 +20,25 @@ session_start();
     require('cabecera.php')
         ?>
     <div class="sesion">
-        <h1>Subir foto</h1>
+        <h1>Sube tu propio juego</h1>
+        <?php
+        if (isset($_GET['error'])) {
+            echo '<p class="error">Usuario o contraseña incorrectos</p>';
+        }
+        ?>
 
-        <form action="subida.php" method="post" enctype="multipart/form-data">
-            <input type="file" name="fileToUpload" id="fileToUpload">
-            <input type="submit" value="Subir archivo" name="submit">
+        <form action="procesarSubida.php" method="post" enctype="multipart/form-data">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+            <label for="descripcion">Descripcion:</label>
+            <textarea rows="6" cols="66" id="descripcion" name="descripcion" style="color: black; border-radius: 20px; padding: 10px"></textarea>
+            <label for="precio">Precio:</label>
+            <input type="number" name="precio" id="precio" placeholder="Precio">
+            <label for="stock">Stock:</label>
+            <input type="number" name="stock" id="stock" placeholder="Stock">
+            <label for="imagen">Imagen:</label>
+            <input type="file" name="imagen" id="imagen">
+            <input type="submit" value="Login">
         </form>
     </div>
 </body>

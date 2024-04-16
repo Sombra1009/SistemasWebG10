@@ -11,10 +11,10 @@ define('RUTA_JS', RUTA_APP . '/js');
 define('INSTALADA', true);
 
 // Parámetros de configuración de la BD
-define('BD_HOST', 'localhost');
+define('BD_HOST', 'vm002.db.swarm.test');
 define('BD_NAME', 'G10');
-define('BD_USER', 'G10');
-define('BD_PASS', 'G10');
+define('BD_USER', 'ejercicio02');
+define('BD_PASS', 'ejercicio02');
 
 /* */
 /* Utilidades básicas de la aplicación */
@@ -70,4 +70,8 @@ Mensaje::init();
 /* */
 require_once 'src/BD.php';
 require_once 'src/Productos.php';
-require_once 'src/DAO.php';
+require_once 'src/categoria.php';
+require_once 'src/Noticia.php';
+require_once 'src/Usuario.php';
+require_once 'src/orders.php';
+require_once 'src/orderItem.php';
