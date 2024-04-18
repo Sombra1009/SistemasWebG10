@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once 'config.php';
+$id = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -17,105 +18,71 @@ session_start();
 
 <body>
     <?php
-    require('cabecera.php')
+    require ('cabecera.php')
         ?>
     <main>
-        
-    <div class="carritoContainer">
-        <div class="carrito">
-            <p>Carrito</p>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" class="portada">
+
+        <div class="carritoContainer">
+            <div class="carrito">
+                <p>Carrito</p>
+                <?php
+                $total = 0;
+                $n = 0;
+                $productos = Orders::buscaCarritoUser($_SESSION['id'])->productosAsociados();
+                foreach ($productos as $producto) {
+                    $total = $total + $producto->precio;
+                    $n = $n + 1;
+
+                    echo " <div class=juegoCarrito>";
+                    echo "<img src='" . $producto->imagen . "' alt='imagen del producto' class=portada>";
+
+                    echo "<div class=buyinformacion>";
+
+                    echo "<p>" . $producto->nombre . "<a style='color:red' href ='procesarEliminar.php?producto=" . $producto->id . "'> Eliminar</a></p>";
+                    echo "<p class=precio>" . $producto->precio . "€</p>";
+                    echo "</div>";
+                    echo "</div>";
+
+                }
+                ?>
+
+
+            </div>
+            <div class="resumen">
+                <p>Resumen</p>
                 <div class="buyinformacion">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>€</p>
-                    
+                    <p><?php echo $n; ?></p>
+                    <p>productos</p>
+                    <p class="precio"><?php echo $total; ?>€</p>
                 </div>
+                <div style="display: flex;">
+                    <input type="checkbox">
+                    <p>Usar puntos disponibles:</p>
+                    <p class="precio"><?php echo Usuario::getUsuario($_SESSION['username'])->monedas; ?></p>
+                </div>
+                <div style="margin-top: 40px;">
+                    <div class="buyinformacion">
+                        <p>Total </p>
+
+                        <p class="precio"><?php echo $total; ?>€</p>
+                    </div>
+                </div>
+
+                <button onclick="window.location.href = 'procesarCompra.php'">Comprar</button>
             </div>
 
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" class="portada">
-                <div class="buyinformacion">
-                   <p>Nombre</p>
-                 
-                    <p class="precio">10<span>,57</span>€</p>
-                    
-                </div>
-            </div>
-            
-        </div>    
-        <div class="resumen">
-            <p>Resumen</p>
-            <div class="buyinformacion">
-                <p>n </p>
-                <p>productos</p>
-                <p class="precio">10<span>,57</span>€</p>
-            </div>
-            <div style="display: flex;">
-                <input type="checkbox">
-                <p>Usar puntos disponibles:</p>
-                <p class="precio">10<span>,57</span>€</p>
-            </div>
-            <div style="margin-top: 40px;">
-                <div class="buyinformacion">
-                    <p>Total </p>
-                    
-                    <p class="precio">10<span>,57</span>€</p>
-                </div>
-            </div>
-            <button>Comprar</button>
         </div>
-    
-    </div>
-      
 
 
-    <div class="gameBuyContainer" style="margin-top: 30px;">
-        <p>Juegos similares</p>
-        <div class="gameContainer">
-            <div>
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
-                <div class=informacion>
-                    <p>Producto 1</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <div>
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
-                <div class=informacion>
-                    <p>Producto 1</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <div>
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
-                <div class=informacion>
-                    <p>Producto 1</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <div>
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
-                <div class=informacion>
-                    <p>Producto 1</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <div>
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
-                <div class=informacion>
-                    <p>Producto 1</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
+
+
+        <div class="gameBuyContainer">
+            <p>Juegos similares</p>
+            <?php
+            require ('gameContainer.php');
+            ?>
         </div>
-    </div>
+
     </main>
 </body>
 

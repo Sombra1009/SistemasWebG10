@@ -1,5 +1,5 @@
 <?php
-session_start();
+    require_once('config.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -17,64 +17,9 @@ session_start();
 
 <body>
     <?php
-    require('cabecera.php')
-        ?>
-    <main>
-
-
-    
-
-    <div class="gameBuyContainer" style="margin-top: 30px;">
-        <p>Noticias</p>
-        <div class="gameContainer">
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="noticias" >
-                    <p>Nombre</p>
-                    <p>Descripcion</p>
-                  
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="noticias">
-                <p>Nombre</p>
-                    <p>Descripcion</p>
-                  
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="noticias">
-                <p>Nombre</p>
-                    <p>Descripcion</p>
-                  
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="noticias">
-                <p>Nombre</p>
-                    <p>Descripcion</p>
-                  
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="noticias">
-                   <p>Nombre</p>
-                    <p>Descripcion</p>
-                  
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    </main>
+    require('cabecera.php');
+    require('noticiaContainer.php');
+    ?>   
 </body>
 
 

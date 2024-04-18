@@ -40,7 +40,7 @@
             relacionadas con los juegos y la plataforma.
         </p>
         <a href="principal.php"><img src="img/logoFoto.jpg" style="margin: 0 auto; display: block;" alt="Logotipo de la empresa como foto"></a>
-        <footer style="display: flex; justify-content: center; align-items: center; height: 100%; margin-top: 250px; margin-bottom: 20px;">
+        <footer style="display: flex; justify-content: center; align-items: center; height: 100%; margin-top: 292px;">
             <a href="./Practica1/contacto.html">CONTACTO</a>
         </footer>
     </section>

@@ -24,16 +24,17 @@ session_start();
 
         <p>Regístrese para acceder a sus claves, interactuar en el foro y poder comprar sus juegos favoritos</p>
 
-        <form action="login.php" method="post">
+        <form action="ProcesarRegistro.php" method="post">
             <label for="usuario">Usuario:</label>
-            <input type="text" name="usuario" id="usuario" placeholder="Usuario">
-            <label for="usuario">Correo electrónico:</label>
-            <input type="text" name="mail" id="mail" placeholder="Correo electrónico">
+            <input type="text" name="usuario" id="usuario" placeholder="Usuario" required>
+            <label for="mail">Correo electrónico:</label>
+            <input type="text" name="mail" id="mail" placeholder="Correo electrónico" required>
             <label for="password">Contraseña:</label>
-            <input type="password" name="password" id="password" placeholder="Password">
-            <p>¿Ya tienes cuenta? <a href="login.php"> Inicia sesión</a></p>
-            <input type="submit" value="Login">
+            <input type="password" name="password" id="password" placeholder="Contraseña" required>
+            <p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión</a></p>
+            <input type="submit" value="Registrarse">
         </form>
+
 
         <p>Al crear una cuenta, aceptas nuestros <a href="img/servicio.pdf">Términos de servicio</a> y <a href="img/privacidad.pdf">Política de privacidad</a></p>
     </div>
