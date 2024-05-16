@@ -1,81 +1,21 @@
 <?php
-session_start();
-?>
-<!DOCTYPE html>
-<html lang="es">
+require_once 'config.php';
 
+$cabecera = 'cabeceraBotones.php';
+$nivel = $_SESSION['nivel'] ?? 0;
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+ob_start();
+    $noticias = Noticia::getAllNoticias();
+    $tittle = "NOTICIAS";
+    if($noticias){
+        $tittle = "NOTICIAS";
+        
+    } else {
+        $tittle = "NO HAY NOTICIAS";
+    }
 
-    <title>VirtualVenture</title>
-</head>
+    require 'containers/noticiasContainer.php';
 
+$contenidoPrincipal = ob_get_clean();
 
-<body>
-    <?php
-    require('cabecera.php')
-        ?>
-    <main>
-
-
-    
-
-    <div class="gameBuyContainer" style="margin-top: 30px;">
-        <p>Noticias</p>
-        <div class="gameContainer">
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="noticias" >
-                    <p>Nombre</p>
-                    <p>Descripcion</p>
-                  
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="noticias">
-                <p>Nombre</p>
-                    <p>Descripcion</p>
-                  
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="noticias">
-                <p>Nombre</p>
-                    <p>Descripcion</p>
-                  
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="noticias">
-                <p>Nombre</p>
-                    <p>Descripcion</p>
-                  
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="noticias">
-                   <p>Nombre</p>
-                    <p>Descripcion</p>
-                  
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    </main>
-</body>
-
-
-</html>
+require 'plantilla.php';

@@ -1,50 +1,73 @@
+<?php
+require_once 'config.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
-
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="virtualventure.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
-
+    <link rel="stylesheet" href="style.css">
     <title>VirtualVenture</title>
+    <script src="sweetalert2.js"></script>
+    <script src="scripts.js"></script>
+    <link rel="icon" type="image/x-icon" href="img/logologo.png">
 </head>
 
-
 <body>
+    <?php
+    require 'cabeceraBotones.php';
+    ?>
+    <?php
+    $sorteos = Sorteo::buscaTodosActivos();
+    require 'Carrousel.php';
+    ?>
 
-    <header class="container teal"
-        style=" height: 100px; text-align: center; display: flex; align-content: center; justify-content: space-around; align-items:center">
-        <a href="Practica1/bocetos.html" class="bar-item button"
-            style="text-decoration:none; height: min-content; margin-top: 30px; background-color: #6917b6;">BOCETOS</a>
-        <a href="Practica1/miembros.html" class="bar-item button"
-            style="text-decoration:none; height: min-content; margin-top: 30px; background-color: #6917b6;">MIEMBROS</a>
-        <h1 style="font-family: Roboto; width: 3000px"><strong>V I R T U A L V E N T U R E</strong></h1>
-        <a href="Practica1/detalles.html" class="bar-item button"
-            style="text-decoration:none; height: min-content; margin-top: 30px; background-color: #6917b6;">DETALLES</a>
-        <a href="Practica1/planificacion.html" class="bar-item button"
-            style="text-decoration:none; height: min-content; margin-top: 30px; background-color: #6917b6;">PLANIFICACION</a>
-    </header>
+    <?php
+    $productos = Producto::getAllProductsPorLevel($_SESSION['nivel'] ?? 1);
+    $tittle = "JUEGOS";
+    require 'containers/gameContainer.php';
 
-    <section style="margin-left:5%; margin-top: 100px;">
-        <h2 style="font-family: Roboto; text-align: center;"><strong>Tu aventura virtual</strong></h2>
-        <p style="font-family: Roboto; margin-inline: 25%;">
-            VirtualVenture es una plataforma web que permite a los usuarios comprar y vender juegos, otorgando monedas
-            virtuales como recompensa por compras. Además, cuenta con un sistema de niveles que desbloquea ofertas
-            exclusivas y sorteos
-        </p>
-        <p style="font-family: Roboto; margin-inline: 25%;">
-            Los usuarios pueden subir de nivel mediante compras, ventas y participación en el foro. El foro de
-            VirtualVenture ofrece un espacio interactivo para compartir experiencias y participar en discusiones
-            relacionadas con los juegos y la plataforma.
-        </p>
-        <a href="principal.php"><img src="img/logoFoto.jpg" style="margin: 0 auto; display: block;" alt="Logotipo de la empresa como foto"></a>
-        <footer style="display: flex; justify-content: center; align-items: center; height: 100%; margin-top: 250px; margin-bottom: 20px;">
-            <a href="./Practica1/contacto.html">CONTACTO</a>
-        </footer>
-    </section>
+    if (isset($_SESSION['role']) && !isset($_SESSION['noMostrar'])) {
+        if (($_SESSION['xp'] >= Niveles::getMaxXp($_SESSION['nivel'])) && ($_SESSION['nivel'] < Niveles::getMaxLevel())) {
+            $form = new FormularioPerfil();
+            $form->gestiona();
+            $action = htmlspecialchars($_SERVER['REQUEST_URI']);
+            $subirNivel = <<<EOS
+                <form action="{$action}" method="post" id="levelUpForm">
+                    <input type="hidden" name="levelUp" value="levelUp">
+                    <input type="hidden" name="formId" value="formularioPerfil">
+                </form>
+            EOS;
+            echo $subirNivel; ?>
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Enhorabuena! Tiene suficiente experiencia para subir de nivel',
+                    showCloseButton: true,
+                    showConfirmButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: 'Aceptar',
+                    cancelButtonText: 'No volver a mostrar',
+                    theme: 'bootstrap-4'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        document.getElementById("levelUpForm").submit();
+                    } else if(result.dismiss === Swal.DismissReason.cancel){
+                        Swal.fire("Puede proceder a subir de nivel en la sección de perfil").then((result) => {
+                                window.location.href = "noMostrar.php";
+                        });
+                    }else{
+                        Swal.fire("Puede proceder a subir de nivel en la sección de perfil")
+                    }
+                });
+            </script>
+            <?php
+
+        }
+    }
+    ?>
+
 </body>
-
 
 </html>

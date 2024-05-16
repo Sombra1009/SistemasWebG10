@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Añade métodos mágicos para que las propiedades utilicen getters y setters.
  * Si existen métodos <code>setPropiedad(x)</code> y <code>getPropiedad()</code> se puede hacer:
@@ -17,7 +16,7 @@ trait MagicProperties
         if (method_exists($this, $methodName)) {
             return $this->$methodName();
         } else {
-            throw new Exception("La propiedad '$property' no está definida");
+            throw new \Exception("La propiedad '$property' no está definida");
         }
     }
 
@@ -27,7 +26,7 @@ trait MagicProperties
         if (method_exists($this, $methodName)) {
             $this->$methodName($value);
         } else {
-            throw new Exception("La propiedad '$property' no está definida");
+            throw new \Exception("La propiedad '$property' no está definida");
         }
     }
 }

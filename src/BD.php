@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Funciones de utilidad para acceso a la base de datos.
  */
@@ -31,7 +30,7 @@ class BD
     function getConexionBd()
     {
         if ($this->conexion == null) {
-            $conn = new mysqli(BD_HOST, BD_USER, BD_PASS, BD_NAME);
+            $conn = new \mysqli(BD_HOST, BD_USER, BD_PASS, BD_NAME);
             if ($conn->connect_errno) {
                 error_log("Error de conexión a la BD: ({$conn->connect_errno }) {$conn->connect_error}");
                 Utils::paginaError(502, 'Error', 'Oops', 'No ha sido posible conectarse a la base de datos.');
@@ -45,7 +44,7 @@ class BD
             $this->conexion = $conn;
 
             // Se llamará a cierraConexion() antes de terminar la ejecución del script
-            register_shutdown_function(Closure::fromCallable([$this, 'cierraConexion']));
+            register_shutdown_function(\Closure::fromCallable([$this, 'cierraConexion']));
         }
         return $this->conexion;
     }

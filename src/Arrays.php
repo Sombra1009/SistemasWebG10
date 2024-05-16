@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Funciones de utilería para arrays.
  */

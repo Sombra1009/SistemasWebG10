@@ -1,5 +1,4 @@
 <?php
-
 abstract class Utils
 {
     private function __construct()

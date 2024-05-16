@@ -1,79 +1,51 @@
 <?php
-session_start();
-?>
-<!DOCTYPE html>
-<html lang="es">
+require_once 'config.php';
 
+$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+$foro = Foro::getForoPorId($id);
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+if(!$id || !$foro){
+    header('Location: index.php');
+    exit();
+}   
 
-    <title>VirtualVenture</title>
-</head>
+$cabecera = 'cabeceraBotones.php';
+$form = new FormularioSubidaPost($id);
+$htmlForm = $form->gestiona(); 
 
+$contenidoPrincipal = <<<EOS
+    <h2 class="foroTittle">{$foro->titulo}</h2>
+    <div class="foro">
+        <div class="mensajes">
+EOS;
 
-<body>
-    <?php
-    require('cabecera.php')
-        ?>
-    <main>
-
-
-    <div class="gameBuyContainer" style="margin-top: 30px;">
-        <p>Foro de juegos más populares</p>
-        <div class="gameContainer">
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="foro">
-                   <p>Nombre</p>
-                 
-                   <p>Descripcion</p>
-                    
-                </div>
+foreach(Post::getPostIdForo($id) as $post){
+    $usuario = Usuario::getUsuarioPorId($post->idUsuario);
+    $contenidoPrincipal .= <<<EOS
+        <div class="mensaje">
+            <div class="cabeceraPost">
+                <p>{$usuario->username}<span>{$post->fecha}</span></p>
             </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="foro">
-                   <p>Nombre</p>
-                 
-                   <p>Descripcion</p>
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="foro">
-                   <p>Nombre</p>
-                   <p>Descripcion</p>
-                    
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="foro">
-                   <p>Nombre</p>
-                    <p>Descripcion</p>
-                    
-                    
-                </div>
-            </div>
-            <div class="juegoCarrito">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" >
-                <div class="foro">
-                   <p>Nombre</p>
-                 
-                   <p>Descripcion</p>
-                    
-                </div>
+            <div class="contenidoPost">
+                <p>{$post->contenido}</p>
             </div>
         </div>
+EOS;
+}
+
+
+$contenidoPrincipal .= <<<EOS
+        </div>
+        {$htmlForm}
     </div>
-    </main>
-</body>
+    <script>
+    function actualizarPagina() {
+        location.reload();
+    }
+    
+    setInterval(actualizarPagina, 60000);
+    </script>
+EOS;
 
 
-</html>
+require 'plantilla.php';

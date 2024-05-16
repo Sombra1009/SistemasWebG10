@@ -4,18 +4,22 @@
 /* */
 
 // Parámetros de configuración generales
-define('RUTA_APP', '/SistemasWebG10');
+define('RUTA_APP', './');
 define('RUTA_IMGS', RUTA_APP . '/img');
 define('RUTA_CSS', RUTA_APP);
 define('RUTA_JS', RUTA_APP . '/js');
 define('INSTALADA', true);
 
 // Parámetros de configuración de la BD
+//define('BD_HOST', 'vm002.db.swarm.test');
 define('BD_HOST', 'localhost');
-define('BD_NAME', 'G10');
-define('BD_USER', 'G10');
-define('BD_PASS', 'G10');
-
+define('BD_NAME', 'virtualventure');
+define('BD_USER', 'virtualventure');
+define('BD_PASS', 'virtualventure');
+/*
+define('BD_USER', 'ejercicio02');
+define('BD_PASS', 'ejercicio02');
+*/
 /* */
 /* Utilidades básicas de la aplicación */
 /* */
@@ -69,5 +73,33 @@ Mensaje::init();
 /* Clases que usan una BD para almacenar el estado */
 /* */
 require_once 'src/BD.php';
-require_once 'src/Productos.php';
-require_once 'src/DAO.php';
+require_once 'formularios/FormularioLogin.php';
+require_once 'formularios/FormularioRegistro.php';
+require_once 'formularios/FormularioPerfil.php';
+require_once 'formularios/FormularioCompra.php';
+require_once 'formularios/FormularioSubirPost.php';
+require_once 'formularios/FormularioSubidaSorteo.php';
+require_once 'formularios/FormularioModificarSorteo.php';
+require_once 'formularios/FormularioSubidaProducto.php';
+require_once 'formularios/FormularioModificarProducto.php';
+require_once 'formularios/FormularioSubidaNoticia.php';
+require_once 'formularios/FormularioModificarNoticia.php';
+require_once 'formularios/FormularioSubidaUsuario.php';
+require_once 'formularios/FormularioModificarUsuario.php';
+require_once 'formularios/FormularioParticiparSorteo.php';
+require_once 'formularios/FormularioJuegoCarrito.php';
+require_once 'formularios/FormularioValidarCompra.php';
+require_once 'formularios/FormularioTarjeta.php';
+require_once 'formularios/FormularioResenna.php';
+require_once 'src/Usuario.php';
+require_once 'src/Producto.php';
+require_once 'src/Orders.php';
+require_once 'src/OrdersItem.php';
+require_once 'src/Noticia.php';
+require_once 'src/Categoria.php';
+require_once 'src/Sorteo.php';
+require_once 'src/Niveles.php';
+require_once 'src/Monedas.php';
+require_once 'src/Comentario.php';
+require_once 'src/Foro.php';
+require_once 'src/Post.php';

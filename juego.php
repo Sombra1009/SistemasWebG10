@@ -1,111 +1,92 @@
 <?php
-session_start();
-?>
-<!DOCTYPE html>
-<html lang="es">
+require_once 'config.php';
+$id = $_GET['id'];
 
+$producto = Producto::getProduct($id);
+$htmlFormLogin = '';
+$htmlFormResenna = '';
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+if (!$producto) {
+    header("Location: ./");
+    exit();
+}
 
-    <title>VirtualVenture</title>
-</head>
+if (isset($_SESSION['role'])) {
+    $form = new FormularioCompra($id);
+    $htmlFormLogin = $form->gestiona();
 
+    if (!Comentario::productoComentado($id, $_SESSION['id'])) {
+        $formR = new FormularioResenna($id);
+        $htmlFormResenna = $formR->gestiona();
+    }
+}
+$media = number_format(Comentario::getValoracionMedia($id) ?? 0, 2);
 
-<body>
-    <?php
-    require('cabecera.php')
-        ?>
-    <main>
-        
-    <div class="gameBuyContainer">
-        <p>Nombre</p>
-            <div>
-            <div style="display: flex;">
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto" class="portada">
-                <div class="buyinformacion">
-                   <p>descripcion</p>
-                    <p class="precio">10<span>,57</span>€</p>
+$check1 = "";
+$check2 = "";
+$check3 = "";
+$check4 = "";
+$check5 = "";
+if ($media <= 1 && $media > 0) {
+    $check1 = "checked";
+} else if ($media <= 2 && $media > 1) {
+    $check2 = "checked";
+} else if ($media <= 3 && $media > 2) {
+    $check3 = "checked";
+} else if ($media <= 4 && $media > 3) {
+    $check4 = "checked";
+} else if ($media <= 5 && $media > 4) {
+    $check5 = "checked";
+}
+
+$cabecera = 'cabeceraBotones.php';
+
+$descuento = '';
+if ($producto->descuento > 0) {
+    $descuento = "<span class='descuento'> {$producto->descuento}% </span>";
+}
+$precio = $producto->precio;
+
+$foro = Foro::getForoPorIdProducto($producto->id);
+
+$contenidoPrincipal = <<<EOS
+    <h1 class='containerTittle'>{$producto->nombre}</h1>
+    <div class='juego'>
+        <img src='{$producto->imagen}' alt='imagen de la noticia'>
+        <p class='desc'>{$producto->descripcion}</p>
+        <div class='juegoDer'>
+            <a class='foroButton' href='foro.php?id={$foro->id}'>FORO</a>
+            <div class='valoracion'>
+                <p>Valoración media: {$media}</p>
+                <div class="rating">
+                        <input type='radio' hidden  id='rating_51' value="5" data-idx='0' {$check5} disabled>	
+                        <label for='rating_51'></label>
                     
-                </div>
-            </div>
-            <div class="buyInteracion">
+                        <input type='radio' hidden id='rating_41' value="4" data-idx='1' {$check4} disabled>
+                        <label for='rating_41'></label>
+                    
+                        <input type='radio' hidden id='rating_31' value="3" data-idx='2' {$check3} disabled>
+                        <label for='rating_31'></label>
                 
-                    <p>principal secundarios platino</p>
-                    <p>datos</p>
-                    <div >
-                        <button>Guia</button> 
-                        <button>Trucos</button>
-                        <button>Reseñas</button>
-                    </div>
-                    <div class="estrellas" >
-                        <p>Ranking</p>
-                        <img src="img/estrellaLlena.png" alt="Estrella llena" >
-                        <img src="img/estrellaLlena.png" alt="Estrella llena" >
-                        <img src="img/estrellaLlena.png" alt="Estrella llena" >
-                        <img src="img/estrellaLlena.png" alt="Estrella llena" >
-                        <img src="img/estrellaLlena.png" alt="Estrella llena" >
-                       
-                    </div>
-                    <div >
-                        <button>Comprar</button>
-                    </div>
-                
+                        <input type='radio' hidden id='rating_21' value="2" data-idx='3' {$check2} disabled>
+                        <label for='rating_21'></label>
+                    
+                        <input type='radio' hidden id='rating_11' value="1" data-idx='4' {$check1} disabled>
+                        <label for='rating_11'></label>
+                </div>
             </div>
-       </div>
 
-    </div>
+            <h2>Precio: {$precio}€ <span> {$descuento} </span> </h2>
 
-    <div class="gameBuyContainer">
-        <p>Juegos similares</p>
-        <div class="gameContainer">
-            <div>
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
-                <div class=informacion>
-                    <p>Producto 1</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <div>
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
-                <div class=informacion>
-                    <p>Producto 1</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <div>
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
-                <div class=informacion>
-                    <p>Producto 1</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <div>
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
-                <div class=informacion>
-                    <p>Producto 1</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <div>
-                <img src="img/logoFoto.jpg" alt="Logotipo de la empresa como foto">
-                <div class=informacion>
-                    <p>Producto 1</p>
-                    <p class="precio">10<span>,57</span>€</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
+            {$htmlFormLogin}
         </div>
     </div>
-    </main>
-</body>
 
+    {$htmlFormResenna}
+EOS;
 
-</html>
+ob_start();
+require_once 'containers/comentariosContainer.php';
+$contenidoPrincipal .= ob_get_clean();
+
+require_once 'plantilla.php';
